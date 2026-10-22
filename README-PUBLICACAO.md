@@ -8,6 +8,7 @@
 - `privacidade.html` — aviso de privacidade inicial
 - `assets/` — imagens e ícone
 - `.nojekyll` — publica os arquivos estáticos diretamente
+- `CNAME` — configura o domínio `darcisiofischer.com.br` para GitHub Pages
 
 Este pacote foi preparado especialmente para o repositório público `souupgrowth/darcisio-fischer`. **Não precisa de Cloudflare, Resend, banco de dados ou servidor próprio.**
 
@@ -25,7 +26,12 @@ Este pacote foi preparado especialmente para o repositório público `souupgrowt
 3. Extraia este ZIP no computador. Envie **o conteúdo** da pasta (arquivos e pasta `assets`), e não o arquivo ZIP sozinho.
 4. Confirme em **Commit changes**. O `index.html`, `styles.css` e `script.js` existentes serão substituídos.
 5. Entre em **Settings → Pages**. Em `Build and deployment`, selecione **Deploy from a branch**, branch **main**, folder **/(root)** e clique em **Save**.
-6. Quando a publicação terminar, visite **https://souupgrowth.github.io/darcisio-fischer/**.
+6. No GitHub, abra **Settings → Pages → Custom domain**, confirme `darcisiofischer.com.br` e clique em **Save**.
+7. No Registro.br, crie quatro registros tipo A para o domínio raiz (`@` ou campo Nome vazio): `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`; e um CNAME para `www` apontando para `souupgrowth.github.io` (sem `/darcisio-fischer`).
+8. Após validação do DNS, em **Settings → Pages**, habilite **Enforce HTTPS** quando disponível. A configuração pode levar até 24h para propagar.
+9. Acesse **https://darcisiofischer.com.br** (o `www` redirecionará para o domínio principal).
+
+**IMPORTANTE:** os registros DNS precisam ser criados no provedor DNS autoritativo. Se o Registro.br estiver apontando para nameservers de outro provedor, configure o DNS nesse provedor em vez de trocar nameservers sem confirmar dependências como email. O `CNAME` do pacote contém somente o domínio principal; não inclua `https://` nem `www`.
 
 ## Funcionalidades
 
