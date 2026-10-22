@@ -1,318 +1,214 @@
-/* Fischer | Visagismo e Código da Imagem */
 (() => {
   'use strict';
+  const $ = (sel) => document.querySelector(sel);
+  // CONTATOS DO PROFISSIONAL — PREENCHA AQUI ANTES DE PUBLICAR.
+  // WhatsApp deve ter DDI+DDD+número (apenas algarismos), ex: 5547999999999.
+  const cfg = {
+    whatsappNumber: '', // CONFIRMAR o número antes de habilitar o botão
+    whatsappDisplay: '', // Número que deve aparecer no site
+    instagramUrl: '',   // Ex.: https://www.instagram.com/seu_perfil/
+    tiktokUrl: ''       // Ex.: https://www.tiktok.com/@seu_perfil
+  };
+  const icon = (type) => {
+    const svg = {
+      brain:'<path d="M12 5a4 4 0 0 0-7 3 4 4 0 0 0-1 7 4 4 0 0 0 4 5 4 4 0 0 0 4-2V5Zm0 0a4 4 0 0 1 7 3 4 4 0 0 1 1 7 4 4 0 0 1-4 5 4 4 0 0 1-4-2V5Z"/><path d="M8 8v8m8-8v8M5 13h4m6 0h4"/>',
+      profile:'<path d="M11 3a8 8 0 0 0-1 16c-1 0-2 2-2 2h11l-3-5a7 7 0 0 0 2-5c0-4-3-8-7-8Z"/><path d="M11 5v12M7 10h5"/>',
+      target:'<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/>',
+      arrow:'<circle cx="10" cy="14" r="8"/><circle cx="10" cy="14" r="4"/><path d="m13 11 8-8m-5 0h5v5"/>',
+      bulb:'<path d="M9 18h6m-5 3h4m-6-6c-1-2-4-3-4-7a8 8 0 1 1 16 0c0 4-3 5-4 7l-1 2H9l-1-2Z"/><path d="M12 1v2M2 9H1m22 0h-1M4 3l2 2m14-2-2 2"/>',
+      frame:'<rect x="4" y="4" width="16" height="16" rx="1"/>',
+      diamond:'<path d="M3 8 7 3h10l4 5-9 13L3 8Z"/><path d="M3 8h18M7 3l5 18L17 3"/>',
+      growth:'<path d="M3 20V15h4v5m3 0v-9h4v9m3 0V8h4v12M4 10l7-6 4 3 6-5"/>',
+      dna:'<path d="M6 3c13 7-1 11 12 18M18 3C5 10 19 14 6 21M7 7h10M6 12h12M7 17h10"/>',
+      infinity:'<path d="M12 12C8 6 3 6 3 12s5 6 9 0c4-6 9-6 9 0s-5 6-9 0Z"/>'
+    };
+    return `<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">${svg[type] || svg.target}</svg>`;
+  };
 
+  // Personalize links no bloco cfg acima. Do not guess handles that were not provided.
+  const whatsapp = /^\d{12,13}$/.test(cfg.whatsappNumber || '') ? `https://wa.me/${cfg.whatsappNumber}?text=${encodeURIComponent('Olá! Gostaria de saber mais sobre a consultoria de visagismo.')}` : '#contato';
+  $('#whatsappCta').href = whatsapp;
+  $('#faqWhatsapp').href = whatsapp;
+  $('#publicPhone').textContent = cfg.whatsappDisplay || 'Contato pelo WhatsApp';
+  $('#instagramResults').href = cfg.instagramUrl || '#resultados';
+  $('#instagramFooter').href = cfg.instagramUrl || '#resultados';
+  $('#tiktokFooter').href = cfg.tiktokUrl || '#contato';
+  if (!cfg.instagramUrl) { $('#instagramResults').title = 'Configure o Instagram em script.js'; $('#instagramResults').removeAttribute('target'); $('#instagramFooter').title = 'Configure o Instagram em script.js'; $('#instagramFooter').removeAttribute('target'); }
+  if (!cfg.tiktokUrl) { $('#tiktokFooter').title = 'Configure o TikTok em script.js'; $('#tiktokFooter').removeAttribute('target'); }
+  if (!/^\d{12,13}$/.test(cfg.whatsappNumber || '')) { $('#whatsappCta').removeAttribute('target'); $('#faqWhatsapp').removeAttribute('target'); }
+  $('#currentYear').textContent = new Date().getFullYear();
+  $('#menuToggle').addEventListener('click', () => {
+    const open = $('#nav').classList.toggle('open');
+    $('#menuToggle').setAttribute('aria-expanded', String(open));
+  });
+  document.querySelectorAll('#nav a').forEach(a => a.addEventListener('click', () => {
+    $('#nav').classList.remove('open');
+    $('#menuToggle').setAttribute('aria-expanded','false');
+  }));
+
+  const visagismo = [
+    {title:'Identidade',subtitle:'O que torna você único.',icon:'brain'},
+    {title:'Personalidade',subtitle:'Seus traços, preferências e sua forma de se expressar.',icon:'profile'},
+    {title:'Harmonia visual',subtitle:'Equilíbrio entre formas, estilo e comunicação.',icon:'target'},
+    {title:'Objetivos',subtitle:'Uma imagem alinhada ao que você deseja transmitir.',icon:'arrow'}
+  ];
+  let visIndex = 0;
+  function drawVis(){
+    const item = visagismo[visIndex];
+    $('#visIcon').innerHTML=icon(item.icon);
+    $('#visName').textContent=item.title;
+    $('#visText').textContent=item.subtitle;
+    $('#visDots').innerHTML='';
+    visagismo.forEach((it,i)=>{
+      const b=document.createElement('button');b.type='button';b.setAttribute('aria-label',`Ver ${it.title}`);b.setAttribute('aria-current',String(i===visIndex));b.classList.toggle('active',i===visIndex);b.onclick=()=>{visIndex=i;drawVis()};$('#visDots').append(b);
+    });
+  }
+  $('#visPrev').onclick=()=>{visIndex=(visIndex-1+visagismo.length)%visagismo.length;drawVis()};
+  $('#visNext').onclick=()=>{visIndex=(visIndex+1)%visagismo.length;drawVis()};
+  drawVis();
+
+  const methodItems = [
+    {title:'Descoberta da Essência',text:'Revelando sua identidade interna antes de tocar no cabelo.',icon:'bulb'},
+    {title:'Análise da Moldura',text:'O rosto como um mapa único de expressão e personalidade.',icon:'frame'},
+    {title:'Revelação da Imagem',text:'A fusão de comportamento, energia e imagem externa.',icon:'diamond'},
+    {title:'Experiência de Excelência',text:'Um atendimento pensado para valorizar cada pessoa.',icon:'growth'},
+    {title:'Metodologia Autoral',text:'Técnica estruturada com precisão e singularidade.',icon:'dna'},
+    {title:'Conexão com sua Essência',text:'Uma imagem com a qual você se reconhece plenamente.',icon:'infinity'}
+  ];
+  let methodPage=0;
+  const countVisible=()=>window.matchMedia('(max-width: 770px)').matches?1:3;
+  function drawMethod(){
+    const per=countVisible(),total=Math.ceil(methodItems.length/per);methodPage%=total;
+    $('#methodCards').innerHTML='';
+    methodItems.slice(methodPage*per,methodPage*per+per).forEach(it=>{
+      const el=document.createElement('article');el.className='method-card';
+      el.innerHTML=`<div class="card-icon">${icon(it.icon)}</div><h3></h3><p></p>`;
+      el.querySelector('h3').textContent=it.title;el.querySelector('p').textContent=it.text;$('#methodCards').append(el);
+    });
+    $('#methodDots').innerHTML='';
+    Array.from({length:total},(_,i)=>{
+      const b=document.createElement('button');b.type='button';b.setAttribute('aria-label',`Página ${i+1} do método`);b.classList.toggle('active',i===methodPage);b.onclick=()=>{methodPage=i;drawMethod()};$('#methodDots').append(b);
+    });
+  }
+  $('#methodPrev').onclick=()=>{methodPage=(methodPage-1+Math.ceil(methodItems.length/countVisible()))%Math.ceil(methodItems.length/countVisible());drawMethod()};
+  $('#methodNext').onclick=()=>{methodPage=(methodPage+1)%Math.ceil(methodItems.length/countVisible());drawMethod()};
+  let previousMobile=countVisible();window.addEventListener('resize',()=>{const current=countVisible();if(current!==previousMobile){methodPage=0;previousMobile=current;drawMethod()}});
+  drawMethod();
+  function addSwipe(container, prev, next){let start=null;container.addEventListener('touchstart', e=>{start=e.touches[0].clientX},{passive:true});container.addEventListener('touchend',e=>{if(start===null)return;const diff=e.changedTouches[0].clientX-start;if(Math.abs(diff)>45)(diff>0?prev:next)();start=null},{passive:true})}
+  addSwipe($('.mini-carousel'),()=>$('#visPrev').click(),()=>$('#visNext').click());
+  addSwipe($('.method-carousel'),()=>$('#methodPrev').click(),()=>$('#methodNext').click());
+
+  // 32 original assertions inspired by the FOUR-TEMPERAMENT FORMAT, not a copy of the external questionnaire.
+  // Each temperament has 8 items (0-3 points each). This is an informal reflection tool, not a clinical instrument.
   const questions = [
-    { text: 'Em um ambiente novo, como você costuma agir?', options: [
-      'Procuro conversar, criar conexões e deixar o ambiente mais descontraído.',
-      'Identifico oportunidades e tomo a iniciativa quando necessário.',
-      'Observo o ambiente e procuro compreender as pessoas antes de me envolver.',
-      'Interajo tranquilamente, ouvindo os outros e respeitando meu próprio ritmo.'
-    ]},
-    { text: 'Quando surge uma mudança inesperada, qual costuma ser sua reação?', options: [
-      'Vejo a mudança como uma oportunidade e me animo com as possibilidades.',
-      'Tomo decisões rapidamente e reorganizo o que for necessário.',
-      'Analiso as consequências antes de definir como agir.',
-      'Procuro me adaptar com calma, avançando passo a passo.'
-    ]},
-    { text: 'Ao tomar uma decisão importante, o que mais pesa para você?', options: [
-      'Conversar, trocar ideias e explorar possibilidades.',
-      'Alcançar o objetivo e colocar o plano em prática.',
-      'Reunir informações e avaliar cuidadosamente os prós e contras.',
-      'Considerar o impacto sobre as pessoas e buscar uma solução equilibrada.'
-    ]},
-    { text: 'Em um trabalho em equipe, qual papel surge mais naturalmente?', options: [
-      'Motivar as pessoas e aproximar os integrantes do grupo.',
-      'Organizar as ações e direcionar o grupo para os resultados.',
-      'Cuidar da qualidade, da coerência e dos detalhes.',
-      'Cooperar, oferecer apoio e ajudar a manter um ambiente harmonioso.'
-    ]},
-    { text: 'Qual dessas características as pessoas mais costumam reconhecer em você?', options: [
-      'Entusiasmo, espontaneidade e facilidade para se comunicar.',
-      'Determinação, iniciativa e objetividade.',
-      'Cuidado, profundidade e atenção aos detalhes.',
-      'Tranquilidade, paciência e confiabilidade.'
-    ]},
-    { text: 'Quando algo não sai como você esperava, o que tende a fazer?', options: [
-      'Converso sobre o ocorrido e procuro recuperar meu entusiasmo.',
-      'Enfrento a situação diretamente e busco resolver o problema.',
-      'Reflito sobre o que aconteceu para entender onde posso melhorar.',
-      'Procuro manter a calma e encontrar uma maneira serena de seguir em frente.'
-    ]},
-    { text: 'Como você costuma organizar suas atividades?', options: [
-      'Gosto de variedade e de manter liberdade para aproveitar oportunidades.',
-      'Defino prioridades e foco no que precisa ser concluído.',
-      'Planejo com cuidado e prefiro ter clareza sobre cada etapa.',
-      'Organizo uma rotina estável, mantendo um ritmo constante.'
-    ]},
-    { text: 'Diante de um desafio novo, qual abordagem mais combina com você?', options: [
-      'Animo-me com a novidade e gosto de compartilhar a experiência.',
-      'Estabeleço um objetivo e começo a agir para alcançá-lo.',
-      'Pesquiso, avalio os riscos e preparo um plano antes de começar.',
-      'Avanço de forma gradual, buscando segurança em cada etapa.'
-    ]},
-    { text: 'Como você prefere receber uma orientação ou um feedback?', options: [
-      'Em uma conversa aberta, dinâmica e positiva.',
-      'De maneira direta, objetiva e focada no que pode ser feito.',
-      'Com informações específicas e explicações detalhadas.',
-      'Em um diálogo tranquilo, respeitoso e sem pressão desnecessária.'
-    ]},
-    { text: 'Quando precisa expressar uma ideia, o que costuma acontecer?', options: [
-      'Falo com espontaneidade e desenvolvo o raciocínio durante a conversa.',
-      'Vou diretamente ao ponto principal e procuro convencer pela objetividade.',
-      'Organizo meus pensamentos antes de falar e escolho as palavras com cuidado.',
-      'Expresso minhas ideias de forma ponderada, ouvindo também os outros.'
-    ]},
-    { text: 'O que mais traz satisfação em uma atividade?', options: [
-      'A possibilidade de interagir, experimentar e viver experiências variadas.',
-      'Perceber avanços concretos e alcançar os objetivos propostos.',
-      'Realizar um trabalho consistente, bem pensado e de qualidade.',
-      'Contribuir para um processo tranquilo, cooperativo e estável.'
-    ]},
-    { text: 'Quando está sob pressão, qual tendência mais se aproxima de você?', options: [
-      'Busco conversar, trocar ideias e recuperar a energia para continuar.',
-      'Assumo a iniciativa e concentro os esforços na solução.',
-      'Reavalio informações e procuro reduzir as possibilidades de erro.',
-      'Tento preservar o equilíbrio e resolver uma coisa de cada vez.'
-    ]}
+    ['Quando estou em um grupo novo, costumo iniciar conversas com facilidade.','sanguineo'],
+    ['Gosto de estabelecer uma meta e partir para a ação sem muita demora.','colerico'],
+    ['Prefiro avaliar os detalhes antes de assumir um compromisso.','melancolico'],
+    ['Sinto-me mais à vontade em ambientes tranquilos e previsíveis.','fleumatico'],
+    ['Conto histórias com entusiasmo e gosto de compartilhar experiências.','sanguineo'],
+    ['Em uma situação difícil, tomo a iniciativa para resolver o problema.','colerico'],
+    ['Costumo pensar em diferentes possibilidades antes de decidir.','melancolico'],
+    ['Procuro ouvir as pessoas antes de expressar minha opinião.','fleumatico'],
+    ['Fico animado quando surge a chance de conhecer pessoas diferentes.','sanguineo'],
+    ['Sinto-me motivado por desafios e metas ambiciosas.','colerico'],
+    ['Valorizo a organização e me incomodo com tarefas mal-acabadas.','melancolico'],
+    ['Tenho facilidade para manter a calma quando há divergências.','fleumatico'],
+    ['Expresso minhas emoções de maneira espontânea.','sanguineo'],
+    ['Prefiro assumir a liderança quando um grupo precisa de direção.','colerico'],
+    ['Gosto de reservar um tempo para refletir sobre o que sinto.','melancolico'],
+    ['Evito conflitos desnecessários e procuro acordos equilibrados.','fleumatico'],
+    ['Novidades costumam despertar rapidamente minha curiosidade.','sanguineo'],
+    ['Quando algo não funciona, procuro uma solução objetiva.','colerico'],
+    ['Presto atenção aos pequenos detalhes da minha apresentação pessoal.','melancolico'],
+    ['As pessoas costumam me procurar para conversar com tranquilidade.','fleumatico'],
+    ['Gosto de ambientes movimentados e de interagir com várias pessoas.','sanguineo'],
+    ['Sinto satisfação ao transformar planos em resultados concretos.','colerico'],
+    ['Prefiro me preparar bem antes de mostrar um trabalho aos outros.','melancolico'],
+    ['Adapto-me ao ritmo do grupo sem precisar disputar espaço.','fleumatico'],
+    ['Demonstro facilmente minha empolgação quando algo me agrada.','sanguineo'],
+    ['Defendo meu ponto de vista com segurança quando acredito nele.','colerico'],
+    ['Tenho gosto por atividades que exigem observação e profundidade.','melancolico'],
+    ['Valorizo relações estáveis e uma rotina sem grandes tensões.','fleumatico'],
+    ['Gosto de improvisar e de deixar espaço para o inesperado.','sanguineo'],
+    ['Prefiro agir e ajustar o caminho durante o processo.','colerico'],
+    ['Fico mais confortável quando sei exatamente o que é esperado.','melancolico'],
+    ['Consigo ter paciência mesmo quando os outros precisam de mais tempo.','fleumatico']
   ];
-
-  const profiles = [
-    {
-      key: 'sanguineo', name: 'Sanguíneo', short: 'SANGUÍNEO', descriptor: 'EXPRESSÃO E SOCIABILIDADE',
-      description: 'Suas respostas indicam uma tendência à espontaneidade, à comunicação e à busca por experiências dinâmicas. No contexto da imagem pessoal, vale explorar como sua expressividade, suas preferências estéticas e sua maneira de interagir podem participar da construção de uma identidade visual coerente com você.'
-    },
-    {
-      key: 'colerico', name: 'Colérico', short: 'COLÉRICO', descriptor: 'INICIATIVA E OBJETIVIDADE',
-      description: 'Suas respostas indicam uma tendência à iniciativa, à decisão e à orientação para objetivos. Na construção da imagem pessoal, vale refletir sobre como você deseja transmitir presença, direção e segurança, respeitando sua individualidade e os contextos em que circula.'
-    },
-    {
-      key: 'melancolico', name: 'Melancólico', short: 'MELANCÓLICO', descriptor: 'REFLEXÃO E ATENÇÃO AOS DETALHES',
-      description: 'Suas respostas indicam uma tendência à reflexão, ao cuidado e à análise criteriosa. No visagismo, essa reflexão pode ajudar a identificar preferências, detalhes e escolhas visuais que tenham significado pessoal e representem a maneira como você deseja se expressar.'
-    },
-    {
-      key: 'fleumatico', name: 'Fleumático', short: 'FLEUMÁTICO', descriptor: 'EQUILÍBRIO E CONSTÂNCIA',
-      description: 'Suas respostas indicam uma tendência à tranquilidade, à cooperação e à busca por equilíbrio. Ao refletir sobre sua imagem pessoal, vale considerar como conforto, coerência e autenticidade podem participar das escolhas que melhor combinam com sua rotina e seus objetivos.'
-    }
-  ];
-  const letters = ['A', 'B', 'C', 'D'];
-
-  const $ = (selector, root = document) => root.querySelector(selector);
-  const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
-  const startView = $('#quiz-start');
-  const questionView = $('#quiz-question-view');
-  const resultView = $('#quiz-result');
-  const questionForm = $('#question-form');
-  const questionText = $('#question-text');
-  const answerOptions = $('#answer-options');
-  const questionCount = $('#question-count');
-  const answeredCount = $('#answered-count');
-  const progressTrack = $('#progress-track');
-  const progressBar = $('#progress-bar');
-  const previousButton = $('#previous-question');
-  const nextButton = $('#next-question');
-  const finishButton = $('#finish-quiz');
-  const answerHint = $('#answer-hint');
-  let currentIndex = 0;
-  let answers = Array(questions.length).fill(null);
-
-  function completedCount() {
-    return answers.filter((answer) => answer !== null).length;
-  }
-
-  function updateProgress() {
-    const count = completedCount();
-    answeredCount.textContent = `${count} de ${questions.length} respondidas`;
-    progressBar.style.width = `${(count / questions.length) * 100}%`;
-    progressTrack.setAttribute('aria-valuenow', String(count));
-  }
-
-  function renderQuestion() {
-    const question = questions[currentIndex];
-    questionCount.textContent = `PERGUNTA ${String(currentIndex + 1).padStart(2, '0')} DE ${questions.length}`;
-    questionText.textContent = question.text;
-    answerOptions.replaceChildren();
-
-    question.options.forEach((option, optionIndex) => {
-      const label = document.createElement('label');
-      label.className = 'answer-option';
-      const input = document.createElement('input');
-      input.type = 'radio';
-      input.name = `question-${currentIndex + 1}`;
-      input.value = String(optionIndex);
-      input.checked = answers[currentIndex] === optionIndex;
-      input.setAttribute('aria-label', `${letters[optionIndex]}. ${option}`);
-      const letter = document.createElement('span');
-      letter.className = 'answer-letter';
-      letter.textContent = letters[optionIndex];
-      letter.setAttribute('aria-hidden', 'true');
-      const copy = document.createElement('span');
-      copy.className = 'answer-copy';
-      copy.textContent = option;
-      input.addEventListener('change', () => {
-        answers[currentIndex] = optionIndex;
-        nextButton.disabled = false;
-        finishButton.disabled = false;
-        answerHint.textContent = 'Resposta selecionada. Você pode continuar.';
-        updateProgress();
-      });
-      label.append(input, letter, copy);
-      answerOptions.append(label);
+  const answersLabels=['Discordo totalmente','Discordo parcialmente','Concordo parcialmente','Concordo totalmente'];
+  const profiles={
+    sanguineo:{name:'Sanguíneo',desc:'Você tende a se expressar com espontaneidade, sociabilidade e entusiasmo. Sua imagem pode valorizar leveza, acolhimento e uma comunicação viva.'},
+    colerico:{name:'Colérico',desc:'Você tende a valorizar iniciativa, direção e objetividade. Uma imagem intencional pode ajudar a transmitir firmeza, clareza e presença.'},
+    melancolico:{name:'Melancólico',desc:'Você tende a observar detalhes, refletir e valorizar coerência. Sua imagem pode expressar sensibilidade, refinamento e atenção às escolhas.'},
+    fleumatico:{name:'Fleumático',desc:'Você tende a favorecer serenidade, estabilidade e escuta. Sua imagem pode comunicar proximidade, equilíbrio e confiança.'}
+  };
+  const dialog=$('#quizDialog');let person=null,answers=Array(questions.length).fill(null),step=0,startedAt=0;
+  function showPanel(id){['quizRegistration','quizQuestions','quizResult'].forEach(p=>$('#'+p).hidden=(id!==p))}
+  const openQuiz=()=>{dialog.showModal();showPanel('quizRegistration');$('#leadName').focus()};
+  $('#openQuiz').onclick=openQuiz;
+  $('#closeQuiz').onclick=()=>dialog.close();$('#endQuiz').onclick=()=>dialog.close();
+  dialog.addEventListener('click', e=>{if(e.target===dialog)dialog.close()});
+  $('#restartQuiz').onclick=()=>{answers=Array(questions.length).fill(null);step=0;startedAt=Date.now();showPanel('quizQuestions');drawQuestion()};
+  $('#leadForm').addEventListener('submit',e=>{
+    e.preventDefault();
+    if(!e.target.reportValidity())return;
+    const name=$('#leadName').value.trim(),email=$('#leadEmail').value.trim(),phone=$('#leadPhone').value.replace(/\D/g,'');
+    if(name.length<2){alert('Informe seu nome.');return}
+    if(phone.length<10 || phone.length>13){alert('Informe um telefone com DDD válido.');return}
+    if(!$('#consentService').checked){alert('Precisamos de sua autorização para enviar o resultado.');return}
+    person={name,email,phone,website:$('#honeypot').value};
+    answers=Array(questions.length).fill(null);step=0;startedAt=Date.now();showPanel('quizQuestions');drawQuestion();
+  });
+  function drawQuestion(){
+    $('#quizCount').textContent=`Pergunta ${step+1} de ${questions.length}`;
+    $('#quizPercent').textContent=`${Math.round((step/questions.length)*100)}%`;
+    $('#quizProgressFill').style.width=`${step/questions.length*100}%`;
+    $('#questionText').textContent=questions[step][0];
+    $('#answerOptions').innerHTML='';
+    answersLabels.forEach((label,value)=>{
+      const item=document.createElement('label'),radio=document.createElement('input'),txt=document.createElement('span');
+      radio.type='radio';radio.name='quizAnswer';radio.value=String(value);radio.checked=answers[step]===value;
+      radio.addEventListener('change',()=>{answers[step]=value;$('#nextQuestion').disabled=false});
+      txt.textContent=label;item.append(radio,txt);$('#answerOptions').append(item);
     });
-
-    previousButton.hidden = currentIndex === 0;
-    const isLast = currentIndex === questions.length - 1;
-    nextButton.hidden = isLast;
-    finishButton.hidden = !isLast;
-    nextButton.disabled = answers[currentIndex] === null;
-    finishButton.disabled = answers[currentIndex] === null;
-    answerHint.textContent = answers[currentIndex] === null ? 'Selecione uma alternativa para continuar.' : 'Resposta selecionada. Você pode continuar.';
-    updateProgress();
+    $('#nextQuestion').disabled=answers[step]===null;
+    $('#nextQuestion').textContent=step===questions.length-1?'VER RESULTADO →':'PRÓXIMA →';
+    $('#previousQuestion').disabled=step===0;
   }
-
-  function beginQuiz() {
-    currentIndex = 0;
-    answers = Array(questions.length).fill(null);
-    startView.hidden = true;
-    resultView.hidden = true;
-    questionView.hidden = false;
-    renderQuestion();
-    window.setTimeout(() => questionText.focus?.(), 50);
-    $('#quiz-panel').scrollIntoView({ behavior: prefersReducedMotion() ? 'auto' : 'smooth', block: 'start' });
-  }
-
-  function calculateScores() {
-    const scores = [0, 0, 0, 0];
-    answers.forEach((answer) => {
-      if (Number.isInteger(answer) && answer >= 0 && answer <= 3) scores[answer] += 1;
-    });
-    return scores;
-  }
-
-  function renderResult() {
-    const scores = calculateScores();
-    const highest = Math.max(...scores);
-    const winners = profiles.filter((_, index) => scores[index] === highest);
-    const isTie = winners.length > 1;
-    const resultLabel = $('#result-label');
-    const resultTitle = $('#result-title');
-    const resultDescription = $('#result-description');
-    resultLabel.textContent = isTie ? 'RESULTADO COMBINADO' : winners[0].descriptor;
-    resultTitle.textContent = isTie ? `Combinação: ${winners.map((profile) => profile.name).join(' + ')}` : winners[0].name;
-    resultDescription.textContent = isTie
-      ? 'Suas respostas apontam uma combinação de tendências entre dois ou mais perfis. Em vez de definir sua personalidade por uma única categoria, este resultado convida você a observar diferentes características que podem aparecer conforme o contexto, as experiências e suas preferências pessoais.'
-      : winners[0].description;
-
-    const scoreList = $('#score-list');
-    scoreList.replaceChildren();
-    profiles.forEach((profile, index) => {
-      const row = document.createElement('div');
-      row.className = 'score-row';
-      const name = document.createElement('span');
-      name.className = 'score-name';
-      name.textContent = profile.name;
-      const track = document.createElement('div');
-      track.className = 'score-track';
-      track.setAttribute('role', 'img');
-      track.setAttribute('aria-label', `${profile.name}: ${scores[index]} de ${questions.length} respostas`);
-      const fill = document.createElement('div');
-      fill.className = 'score-fill';
-      fill.style.width = `${(scores[index] / questions.length) * 100}%`;
-      track.append(fill);
-      const count = document.createElement('span');
-      count.className = 'score-count';
-      count.textContent = `${scores[index]} ${scores[index] === 1 ? 'resposta' : 'respostas'}`;
-      row.append(name, track, count);
-      scoreList.append(row);
-    });
-
-    questionView.hidden = true;
-    resultView.hidden = false;
-    resultView.focus?.();
-    $('#quiz-panel').scrollIntoView({ behavior: prefersReducedMotion() ? 'auto' : 'smooth', block: 'start' });
-  }
-
-  function prefersReducedMotion() {
-    return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  }
-
-  $('#start-quiz').addEventListener('click', beginQuiz);
-  previousButton.addEventListener('click', () => {
-    if (currentIndex > 0) {
-      currentIndex -= 1;
-      renderQuestion();
-      const selected = $('input:checked', answerOptions);
-      (selected || $('input', answerOptions))?.focus();
+  $('#previousQuestion').onclick=()=>{if(step>0){step--;drawQuestion()}};
+  $('#nextQuestion').onclick=()=>{if(answers[step]===null)return;if(step<questions.length-1){step++;drawQuestion()}else finishQuiz()};
+  function finishQuiz(){
+    const scores={sanguineo:0,colerico:0,melancolico:0,fleumatico:0};
+    questions.forEach((q,i)=>{scores[q[1]]+=answers[i]});
+    const maxScore=8*3,total=Object.values(scores).reduce((a,b)=>a+b,0);
+    const ranked=Object.keys(scores).sort((a,b)=>scores[b]-scores[a]);
+    const primary=ranked[0],secondary=ranked[1];
+    $('#resultTitle').textContent=total===0?'Seu perfil precisa de mais informações':`Predominância: ${profiles[primary].name}`;
+    $('#resultSummary').textContent=total===0?'Suas respostas não indicaram uma tendência predominante. Você pode refazer o teste com base em situações do seu dia a dia.':`${person.name.split(/\s+/)[0]}, ${profiles[primary].desc} ${scores[primary]===scores[secondary]?'Há equilíbrio entre os perfis mais pontuados.':`Como tendência secundária, aparece o perfil ${profiles[secondary].name.toLowerCase()}.`}`;
+    $('#resultBars').innerHTML='';
+    for(const type of ranked){
+      const line=document.createElement('div');line.className='result-bar';
+      const numerator=total?Math.round(scores[type]/total*100):0;
+      const title=document.createElement('div');title.className='result-bar-line';
+      const label=document.createElement('span'),percent=document.createElement('span');label.textContent=profiles[type].name;percent.textContent=`${numerator}%`;
+      title.append(label,percent);const meter=document.createElement('div');meter.className='result-meter';const bar=document.createElement('span');bar.style.width=`${scores[type]/maxScore*100}%`;meter.append(bar);line.append(title,meter);$('#resultBars').append(line);
     }
-  });
-  nextButton.addEventListener('click', () => {
-    if (answers[currentIndex] === null) return;
-    if (currentIndex < questions.length - 1) {
-      currentIndex += 1;
-      renderQuestion();
-      questionText.focus?.();
-    }
-  });
-  questionForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-    if (answers.some((answer) => answer === null)) {
-      const missing = answers.findIndex((answer) => answer === null);
-      currentIndex = missing;
-      renderQuestion();
-      answerHint.textContent = 'Responda a esta pergunta para ver seu resultado.';
-      return;
-    }
-    renderResult();
-  });
-  $('#reset-quiz').addEventListener('click', beginQuiz);
-
-  // Mobile navigation
-  const menuToggle = $('.menu-toggle');
-  const mainNav = $('#main-nav');
-  menuToggle.addEventListener('click', () => {
-    const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
-    menuToggle.setAttribute('aria-expanded', String(!isOpen));
-    menuToggle.setAttribute('aria-label', isOpen ? 'Abrir menu' : 'Fechar menu');
-    mainNav.classList.toggle('is-open', !isOpen);
-  });
-  $$('#main-nav a').forEach((link) => link.addEventListener('click', () => {
-    menuToggle.setAttribute('aria-expanded', 'false');
-    menuToggle.setAttribute('aria-label', 'Abrir menu');
-    mainNav.classList.remove('is-open');
-  }));
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && mainNav.classList.contains('is-open')) {
-      menuToggle.setAttribute('aria-expanded', 'false');
-      menuToggle.setAttribute('aria-label', 'Abrir menu');
-      mainNav.classList.remove('is-open');
-      menuToggle.focus();
-    }
-  });
-
-  // FAQ: keep one answer open at a time for a focused reading experience.
-  $$('.faq-item').forEach((item) => item.addEventListener('toggle', () => {
-    if (item.open) $$('.faq-item').filter((other) => other !== item).forEach((other) => { other.open = false; });
-  }));
-
-  // Privacy dialog.
-  const privacyDialog = $('#privacy-dialog');
-  function showDialog(dialog) {
-    if (typeof dialog.showModal === 'function') dialog.showModal();
-    else dialog.setAttribute('open', '');
-    document.body.classList.add('dialog-open');
+    showPanel('quizResult');
+    $('#emailStatus').textContent = 'Seu resultado está disponível acima. Nesta versão, não há envio automático de dados nem de e-mail.';
+    const summary = [`Teste de Temperamento — Darcísio Fischer`, `Nome: ${person.name}`, `Perfil: ${profiles[primary].name}`, `Perfil secundário: ${profiles[secondary].name}`, '', ...ranked.map(type => `${profiles[type].name}: ${total ? Math.round(scores[type]/total*100) : 0}%`), '', $('#resultSummary').textContent].join('\n');
+    $('#copyResult').onclick = async () => {
+      try {
+        if(navigator.clipboard && window.isSecureContext) await navigator.clipboard.writeText(summary);
+        else {const t=document.createElement('textarea');t.value=summary;document.body.appendChild(t);t.select();document.execCommand('copy');t.remove();}
+        $('#emailStatus').textContent = 'Resultado copiado! Você pode colar em um e-mail ou mensagem.';
+      } catch (err) { $('#emailStatus').textContent = 'Não foi possível copiar automaticamente. Faça uma captura de tela do resultado.'; }
+    };
+    const share = $('#shareWhatsapp');
+    if (/^\d{12,13}$/.test(cfg.whatsappNumber || '')) {
+      share.hidden = false;
+      share.onclick = () => {
+        const message = `Olá, Darcísio! Quero compartilhar meu teste de temperamento.\nNome: ${person.name}\nTelefone: ${person.phone}\nE-mail: ${person.email}\n\n${summary}`;
+        window.open(`https://wa.me/${cfg.whatsappNumber}?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
+      };
+    } else share.hidden = true;
   }
-  function hideDialog(dialog) {
-    if (typeof dialog.close === 'function') dialog.close();
-    else dialog.removeAttribute('open');
-    if (!privacyDialog.open) document.body.classList.remove('dialog-open');
-  }
-  $('#open-privacy').addEventListener('click', () => showDialog(privacyDialog));
-  $('#close-privacy').addEventListener('click', () => hideDialog(privacyDialog));
-  $('#privacy-ok').addEventListener('click', () => hideDialog(privacyDialog));
-  privacyDialog.addEventListener('close', () => {
-    if (!privacyDialog.open) document.body.classList.remove('dialog-open');
-  });
-
-  $('#current-year').textContent = String(new Date().getFullYear());
-  updateProgress();
 })();
