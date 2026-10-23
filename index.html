@@ -1,97 +1,28 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#000000">
-  <meta name="description" content="Darcísio Fischer — visagismo, identidade e estratégia de imagem. Conheça sua trajetória e o Método Código da Imagem.">
+  <meta name="description" content="Darcísio Fischer — Visagista. Imagem, estratégia e autenticidade.">
   <title>Darcísio Fischer | Visagista</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600;6..96,700;6..96,800&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=3">
-  <script src="script.js?v=3" defer></script>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- DESKTOP: a imagem do GitHub traz fundo, fotografias e logo. Os títulos e botões ABAIXO são verdadeiros elementos HTML. -->
-  <main class="desktop-artwork" id="inicio" aria-label="Darcísio Fischer — início e sobre">
-    <img class="artwork" src="imagens/secao-1-e-2.png" width="1609" height="2048" alt="Darcísio Fischer, visagista. Fotografias de um homem e uma mulher com marcações faciais, e retrato de Darcísio na seção Sobre." fetchpriority="high">
-
-    <nav class="desktop-nav" aria-label="Navegação principal">
-      <a class="active" href="#inicio">INÍCIO</a>
-      <a href="#sobre">SOBRE</a>
-      <a href="#visagismo" data-pending="Visagismo">VISAGISMO</a>
-      <a href="#teste" data-pending="Teste de temperamento">TESTE</a>
-      <a href="#resultados" data-pending="Resultados">RESULTADOS</a>
-      <a href="#faq" data-pending="Perguntas frequentes">FAQ</a>
-    </nav>
-
-    <section class="desktop-hero-copy" aria-labelledby="titulo-inicio">
-      <h1 id="titulo-inicio">
-        <span>Sua imagem</span>
-        <span><em class="gold-text">comunica</em> antes</span>
-        <span>mesmo de você</span>
-        <span>dizer uma palavra.</span>
-      </h1>
+  <!-- FASE 1: somente as artes de fundo, na ordem aprovada. -->
+  <!-- Os textos, links, botões e interações serão adicionados na FASE 2. -->
+  <main class="landing-fundos">
+    <section class="secao-fundo" id="inicio" aria-label="Primeiras seções da landing page">
+      <img src="imagens/secao-1-e-2.png" alt="Arte de fundo das seções 1 e 2" fetchpriority="high">
     </section>
-    <p class="desktop-hero-description"><span>O visagismo vai além da estética. É a arte de unir</span><span>personalidade, estilo e expressão para criar uma</span><span>imagem que revela o melhor de você.</span></p>
-    <a class="desktop-hero-button" href="#teste" data-pending="Teste de temperamento"><span>DESCUBRA O SEU PERFIL</span><span aria-hidden="true" class="btn-arrow">➜</span></a>
-    <p class="desktop-signature">IMAGEM <span>·</span> ESTRATÉGIA <span>·</span> AUTENTICIDADE <span>·</span> RESULTADO</p>
 
-    <span class="about-anchor" id="sobre" aria-hidden="true"></span>
-    <section class="desktop-about-copy" aria-labelledby="titulo-sobre">
-      <p class="desktop-eyebrow">DARCÍSIO FISCHER</p>
-      <h2 id="titulo-sobre"><span>Da tesoura à</span><span class="gold-text">estratégia</span></h2>
-      <div class="about-paragraphs">
-        <p>Nascido em 1977, em Pato Branco (PR), Darcísio Fischer mudou-se com a família para o Oeste de Santa Catarina em 1992. Em 1996, seguiu sozinho para Balneário Camboriú, onde iniciou sua carreira como Hair Stylist, em 2004.</p>
-        <p>Em 2006, ampliou seus conhecimentos com uma formação internacional na escola Pivot Point, dando continuidade a uma trajetória de constante aperfeiçoamento. Em 2010, tornou-se visagista e, em 2016, coach e analista comportamental, expandindo seu olhar para além da estética.</p>
-        <p>A união de toda essa experiência e conhecimento deu origem ao Método Fischer — Código da Imagem, uma metodologia autoral que conecta beleza, identidade e comportamento.</p>
-      </div>
+    <section class="secao-fundo" id="secoes-3-4" aria-label="Seções 3 e 4">
+      <img src="imagens/secao-3-e-4.png" alt="Arte de fundo das seções 3 e 4" loading="lazy">
+    </section>
+
+    <section class="secao-fundo" id="secoes-4-5" aria-label="Seções 4 e 5">
+      <img src="imagens/secao-4-e-5.png" alt="Arte de fundo das seções 4 e 5" loading="lazy">
     </section>
   </main>
-
-  <!-- MOBILE: usa a MESMA imagem original para os retratos e recompõe o texto em tamanho legível. -->
-  <div class="mobile-site" aria-label="Início e sobre, versão para celular">
-    <header class="mobile-header">
-      <a href="#inicio-mobile" class="brand-crop" aria-label="Darcísio Fischer — início"></a>
-      <button class="menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menu"><span></span><span></span><span></span></button>
-      <nav class="mobile-menu" id="mobile-menu" aria-label="Navegação para celular" hidden>
-        <a href="#inicio-mobile">Início</a>
-        <a href="#sobre-mobile">Sobre</a>
-        <a href="#visagismo" data-pending="Visagismo">Visagismo</a>
-        <a href="#teste" data-pending="Teste de temperamento">Teste</a>
-        <a href="#resultados" data-pending="Resultados">Resultados</a>
-        <a href="#faq" data-pending="Perguntas frequentes">FAQ</a>
-      </nav>
-    </header>
-    <main>
-      <section class="mobile-hero" id="inicio-mobile" aria-labelledby="mobile-title">
-        <div class="mobile-people" role="img" aria-label="Mulher e homem com marcações douradas de análise facial"></div>
-        <div class="mobile-hero-body">
-          <h1 id="mobile-title">Sua imagem <span class="gold-text">comunica</span> antes mesmo de você dizer uma palavra.</h1>
-          <p>O visagismo vai além da estética. É a arte de unir personalidade, estilo e expressão para criar uma imagem que revela o melhor de você.</p>
-          <a class="gold-button" href="#teste" data-pending="Teste de temperamento">DESCUBRA O SEU PERFIL <span aria-hidden="true">➜</span></a>
-        </div>
-        <p class="signature-line">IMAGEM · ESTRATÉGIA · AUTENTICIDADE · RESULTADO</p>
-      </section>
-      <section class="mobile-about" id="sobre-mobile" aria-labelledby="about-title">
-        <div class="mobile-about-photo" role="img" aria-label="Retrato de Darcísio Fischer sorrindo"></div>
-        <div class="mobile-about-content">
-          <p class="eyebrow">DARCÍSIO FISCHER</p>
-          <h2 id="about-title">Da tesoura à <span class="gold-text">estratégia</span></h2>
-          <p>Nascido em 1977, em Pato Branco (PR), Darcísio Fischer mudou-se com a família para o Oeste de Santa Catarina em 1992. Em 1996, seguiu sozinho para Balneário Camboriú, onde iniciou sua carreira como Hair Stylist, em 2004.</p>
-          <p>Em 2006, ampliou seus conhecimentos com uma formação internacional na escola Pivot Point, dando continuidade a uma trajetória de constante aperfeiçoamento. Em 2010, tornou-se visagista e, em 2016, coach e analista comportamental, expandindo seu olhar para além da estética.</p>
-          <p>A união de toda essa experiência e conhecimento deu origem ao Método Fischer — Código da Imagem, uma metodologia autoral que conecta beleza, identidade e comportamento.</p>
-        </div>
-      </section>
-    </main>
-  </div>
-  <dialog id="future-section-dialog" class="future-dialog" aria-labelledby="dialog-title">
-    <button id="dialog-close" type="button" class="dialog-x" aria-label="Fechar aviso">×</button>
-    <p class="eyebrow">DARCÍSIO FISCHER</p>
-    <h2 id="dialog-title">Seção em preparação</h2>
-    <p id="dialog-message">Essa seção será adicionada na próxima etapa da landing page.</p>
-    <button id="dialog-ok" class="dialog-ok" type="button">ENTENDI</button>
-  </dialog>
 </body>
 </html>
