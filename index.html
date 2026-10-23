@@ -118,10 +118,54 @@
 }
 @media(prefers-reduced-motion:reduce){.brand-marquee-track{animation:none}}
 
+  
+/* AJUSTES FINOS — 23/10/2026
+   Somente DESKTOP. Não troca fundos nem altera funcionalidade de cliques. */
+@media (min-width:761px) {
+  /* A base da imagem contém uma frase fixa; cobrimos completamente essa
+     área de preto para deixar visível somente o letreiro animado. */
+  .desktop-page .stage-one .brand-marquee {
+    top:50.65%;
+    height:4.9%;
+    left:0;
+    width:100%;
+    padding-inline:7.5%;
+    background:#000;
+    -webkit-mask-image:none;
+    mask-image:none;
+  }
+  /* Colocar a história ligeiramente mais abaixo, sem aumentar as fontes. */
+  .desktop-page .stage-one .about-copy {
+    top:63.8%;
+  }
+  /* Reposicionar título e carrossel juntos no espaço superior do 2º fundo. */
+  .desktop-page .stage-two .vis-copy {
+    top:4.85%;
+  }
+  .desktop-page .stage-two .vis-carousel {
+    top:5.75%;
+  }
+  /* Suavizar linhas de junção por arredondamento de pixels/bordas da arte. */
+  .desktop-page .stage + .stage {
+    margin-top:-2px;
+  }
+  .desktop-page .stage:not(:last-child)::after {
+    content:"";
+    position:absolute;
+    bottom:-1px;
+    left:0;
+    right:0;
+    height:4px;
+    background:#000;
+    pointer-events:none;
+    z-index:8;
+  }
+}
+
   </style>
 
 </head>
-<body data-versao="landing-ajustes-2026-10-23">
+<body data-versao="landing-ajustes-finos-2026-10-23">
 <!-- As 3 imagens permanecem no GitHub, sem alterações e sem cópias no ZIP. -->
 <main class="desktop-page" aria-label="Darcísio Fischer - Visagismo">
   <section class="stage stage-one" id="inicio" aria-label="Início e Sobre">
