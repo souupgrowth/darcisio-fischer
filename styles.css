@@ -21,3 +21,55 @@
 @media(max-width:770px){.test-copy h2{letter-spacing:.1em;font-size:clamp(1.15rem,4.4vw,1.5rem)}.contact h2{overflow-wrap:break-word}.hero-visual img{mask-image:linear-gradient(to right,transparent 0%,black 25%)}}
 @media(max-width:470px){.test-copy h2{font-size:1.16rem;letter-spacing:.10em}.test-copy{padding-left:20px;padding-right:18px}.marquee-label{overflow:hidden;white-space:nowrap}}
 @media(max-width:770px){.contact{grid-template-columns:minmax(0,1fr)}.contact>div{min-width:0}.contact h2{font-size:clamp(2.75rem,10vw,3.5rem);overflow-wrap:anywhere}.results{grid-template-columns:minmax(0,1fr)}.before-after-grid{min-width:0;max-width:100%}}
+
+/* Identidade visual aprovada: ouro com degradê somente no texto anteriormente dourado */
+:root{--gold-gradient:linear-gradient(110deg,#a9752d 0%,#e7bf65 27%,#fff3bd 47%,#d9a64a 70%,#b58135 100%)}
+h1 em,h2 em,.display-title em,.eyebrow:not(.dark-ink),.method-card h3,.vis-card h3,.method-tagline em,.brand-large strong,.quiz-result-cta strong,.combination-title{
+  color:#e6bf69;background-image:var(--gold-gradient);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
+/* Use os logotipos originais, sem redesenho de letras */
+.brand-logo{display:block;width:158px;height:auto;max-height:65px;object-fit:contain}
+.hero-logo{display:block;width:min(245px,66%);max-height:110px;object-fit:contain;object-position:left center;margin:0 0 20px}
+.brand-large-logo{width:min(280px,100%);height:auto;object-fit:contain}
+.site-footer .brand-logo{width:145px}
+.hero-visual img{width:min(113%,690px);max-width:none;height:100%;right:-10%;object-fit:cover;object-position:69% center;mask-image:linear-gradient(to right,transparent 0%,black 14%)}
+.hero-copy{z-index:2}
+.about-photo img{height:430px;width:100%;object-fit:contain;object-position:bottom center}
+.about-quote{font-weight:600;font-size:1.25rem;bottom:24px;left:20px;right:42px;text-shadow:0 1px 11px #000,0 2px 20px #000}
+.before-after img{height:335px;object-fit:cover;object-position:center}
+/* Quiz: formulário cabe na altura padrão de tela desktop, sem barra lateral interna */
+.quiz-dialog{width:min(720px,calc(100vw - 30px));max-height:calc(100dvh - 24px);overflow:auto}
+.quiz-shell{padding:25px 40px 28px}
+.quiz-top h2{font-size:2.35rem;margin:0 0 4px}
+.quiz-top p:last-child{font-size:.77rem}
+.quiz-top .eyebrow{margin-bottom:4px}
+.quiz-top .quiz-duration{color:var(--gold);margin:0;font-size:.75rem}
+.quiz-panel{padding-top:10px}
+.quiz-panel h3{margin-bottom:9px}
+.quiz-panel form{gap:9px}
+.quiz-panel form>label:not(.check-line){gap:3px}
+.quiz-panel input:not([type=checkbox]){padding:8px 10px}
+.quiz-panel .btn.full{min-height:44px}
+.quiz-close{z-index:2}
+.result-ranking table{border-collapse:collapse;width:100%;font-size:.84rem;margin:12px 0 20px}
+.result-ranking td,.result-ranking th{padding:8px 12px;border:1px solid #534020;text-align:left}
+.result-ranking th{color:var(--gold);background:#1c170f}
+.combination-title{font-size:2rem!important;margin:16px 0 8px!important}
+.profile-insights{border-top:1px solid var(--border);padding:15px 0 6px}
+.profile-insights h4{font:600 1.35rem var(--font-serif);color:#efcd82;margin:12px 0 5px}
+.profile-insights p{font-size:.9rem}
+.quiz-result-cta{border:1px solid var(--border);padding:24px;border-radius:16px;margin:24px 0 17px;background:linear-gradient(135deg,#191205,#080808 55%)}
+.quiz-result-cta h3{font-size:2rem}
+.quiz-result-cta p:not(.eyebrow){font-size:.87rem}
+.quiz-result-cta strong{display:block;margin-bottom:15px}
+.quiz-result-cta .btn{font-size:.67rem;letter-spacing:.08em}
+.end-actions{margin-top:12px}
+@media(min-height:720px) and (min-width:771px){.quiz-dialog:has(#quizRegistration:not([hidden])){overflow:hidden}}
+@media(max-width:770px){.hero-visual img{object-fit:contain;mask-image:linear-gradient(to right,transparent,black 16%)}.hero-logo{width:170px;max-height:78px;margin-bottom:14px}.quiz-dialog{max-height:calc(100dvh - 16px);overflow:auto}.quiz-shell{padding:20px 18px}.quiz-top h2{font-size:2.1rem}.quiz-panel input:not([type=checkbox]){padding:10px 9px}.quiz-panel form{gap:11px}.brand-logo{width:142px}.about-quote{font-size:1.15rem}.site-header .brand-logo{width:140px}}
+@media(max-width:470px){.hero-copy{padding-top:30px}.hero-logo{width:160px}.hero-visual img{object-position:70% center}.method-items{grid-template-columns:1fr}}
+@media(prefers-contrast:more){h1 em,h2 em,.display-title em,.eyebrow,.method-card h3,.vis-card h3{-webkit-text-fill-color:#ffe29a;background-image:none}}
+
+/* Refinamentos de produção */
+.before-after figcaption{font-size:clamp(.55rem,.7vw,.7rem);color:#ceb889;line-height:1.5}
+@media(min-width:771px){.quiz-dialog:has(#quizRegistration:not([hidden])){max-height:calc(100dvh - 20px);overflow:auto}}
+@media(max-width:770px){.quiz-dialog{overscroll-behavior:contain}}

@@ -1,48 +1,42 @@
-# Landing Page Darcísio Fischer — publicação no GitHub Pages
+# Landing Page Darcísio Fischer | GitHub Pages
 
-## Arquivos deste pacote
+**Domínio:** `https://darcisiofischer.com.br`  
+**Repositório:** `https://github.com/souupgrowth/darcisio-fischer`
 
-- `index.html` — página principal
-- `styles.css` — estilos responsivos
-- `script.js` — carrosséis, teste e lógica do resultado
-- `privacidade.html` — aviso de privacidade inicial
-- `assets/` — imagens e ícone
-- `.nojekyll` — publica os arquivos estáticos diretamente
-- `CNAME` — configura o domínio `darcisiofischer.com.br` para GitHub Pages
+## Como publicar
+1. Extraia o ZIP no computador.
+2. Acesse o repositório no GitHub, branch `main`, botão **Add file → Upload files**.
+3. Substitua `index.html`, `styles.css`, `script.js`, `privacidade.html`, `CNAME` e toda a pasta `assets/`. Preserve `.nojekyll`.
+4. Confirme em **Commit changes**. No GitHub Pages, continue em `main` + `/(root)`.
+5. Não altere os DNS nem a configuração de domínio personalizado/HTTPS que já estão funcionando.
+6. Após a publicação, atualize o site com `Ctrl+F5` (ou abra em janela anônima).
 
-Este pacote foi preparado especialmente para o repositório público `souupgrowth/darcisio-fischer`. **Não precisa de Cloudflare, Resend, banco de dados ou servidor próprio.**
+## O que está funcional
+- Layout one-page responsivo com preto e dourado em degradê; fotos e logotipos enviados pela cliente.
+- Navegação do menu por âncoras até cada seção.
+- Carrossel de visagismo (4 tópicos).
+- Carrossel do Método Código da Imagem (3 cards visíveis em desktop, avança **um card por clique**; 1 card em celular).
+- FAQ expansível.
+- Teste com 44 perguntas do PDF enviado, 4 graus de concordância, retorno às perguntas e progresso.
+- Pontuação exploratória: Sanguíneo (1–11), Melancólico (12–22), Colérico (23–33), Fleumático (34–44); escala 0–3; ordenação por pontuação e interpretação dos dois primeiros perfis.
+- Resultado na tela (sem botão de download, salvar ou copiar), com CTA para WhatsApp.
+- WhatsApp confirmado: **(47) 99845-4663**, link `https://wa.me/5547998454663`.
 
-## Antes de enviar
+## Atenção: sem integração de formulários
+Conforme solicitado, **não existe envio automático de cadastros nem resultados**. Os dados digitados e as respostas são usados na sessão do navegador e descartados ao fechar/recarregar a página. O e-mail `darcisiofischer@gmail.com` não recebe resultados ainda. O site usa GitHub Pages sem backend e não guarda leads.
 
-1. Abra `script.js` e atualize os dados no começo do arquivo, dentro do bloco `const cfg`: `whatsappNumber`, `whatsappDisplay`, `instagramUrl`, `tiktokUrl`. Os exemplos não incluem um número de WhatsApp verificado.
-2. Substitua `assets/demo-1.webp`, `demo-2.webp` e `demo-3.webp` por fotos verdadeiras e autorizadas de *antes e depois*. As imagens atuais são **ilustrativas, geradas por IA**, e estão rotuladas como tal.
-3. Quando tiver originais, substitua as imagens de referência do profissional e da capa, que atualmente são recortes da arte.
-4. Revise o texto em `privacidade.html`.
+A configuração de envio automático poderá ser adicionada depois, preferencialmente por endpoint seguro de formulários, com consentimento e aviso de privacidade atualizado. Não basta inserir o endereço de e-mail em HTML/JS.
 
-## Como subir para o GitHub
+## Pendências de conteúdo
+- **Instagram/TikTok**: URLs oficiais não fornecidas. Campos `instagramUrl` e `tiktokUrl` em `script.js` ficam vazios; links de rede aguardam configuração.
+- **Antes/depois**: foram usados recortes da composição ilustrativa aprovada, **não fotografias documentadas de clientes**. Eles são rotulados como ilustrativos. Trocar por fotografias originais autorizadas para divulgar resultados reais.
+- **Teste**: classificação dos quatro temperamentos não é uma avaliação psicológica validada. Não comunicar resultados como diagnóstico.
 
-1. Abra o repositório **https://github.com/souupgrowth/darcisio-fischer**.
-2. Clique em **Add file → Upload files**.
-3. Extraia este ZIP no computador. Envie **o conteúdo** da pasta (arquivos e pasta `assets`), e não o arquivo ZIP sozinho.
-4. Confirme em **Commit changes**. O `index.html`, `styles.css` e `script.js` existentes serão substituídos.
-5. Entre em **Settings → Pages**. Em `Build and deployment`, selecione **Deploy from a branch**, branch **main**, folder **/(root)** e clique em **Save**.
-6. No GitHub, abra **Settings → Pages → Custom domain**, confirme `darcisiofischer.com.br` e clique em **Save**.
-7. No Registro.br, crie quatro registros tipo A para o domínio raiz (`@` ou campo Nome vazio): `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`; e um CNAME para `www` apontando para `souupgrowth.github.io` (sem `/darcisio-fischer`).
-8. Após validação do DNS, em **Settings → Pages**, habilite **Enforce HTTPS** quando disponível. A configuração pode levar até 24h para propagar.
-9. Acesse **https://darcisiofischer.com.br** (o `www` redirecionará para o domínio principal).
-
-**IMPORTANTE:** os registros DNS precisam ser criados no provedor DNS autoritativo. Se o Registro.br estiver apontando para nameservers de outro provedor, configure o DNS nesse provedor em vez de trocar nameservers sem confirmar dependências como email. O `CNAME` do pacote contém somente o domínio principal; não inclua `https://` nem `www`.
-
-## Funcionalidades
-
-- Página responsiva com visagismo, história, teste, método, resultados, contato e FAQ.
-- Carrossel de visagismo: 4 tópicos. Carrossel do método: 6 tópicos.
-- Teste de temperamento: 32 perguntas originais, quatro alternativas por pergunta, quatro perfis, resultado imediatamente na tela.
-- Campo de nome/telefone/e-mail antes do teste (processado localmente).
-- Botão “Copiar meu resultado”; se um número de WhatsApp for configurado, botão opcional de compartilhamento por WhatsApp.
-
-## Limitação importante do GitHub Pages
-
-GitHub Pages hospeda **sites estáticos**. Não executa backend, não salva cadastros em banco e **não consegue enviar e-mails automaticamente por conta própria**. Nesta versão, nenhum cadastro é transmitido automaticamente e os resultados não são enviados por e-mail. Para realmente armazenar os contatos ou fazer envios automáticos seria necessário um serviço externo ou backend, que **não foi incluído neste pacote**, conforme solicitado.
-
-O questionário é uma ferramenta informal de reflexão, sem validação clínica.
+## Arquivos
+- `index.html`: estrutura da landing e formulário do teste.
+- `styles.css`: design responsivo.
+- `script.js`: animações, carrosséis, lógica do questionário e links.
+- `privacidade.html`: aviso de privacidade desta versão sem integração.
+- `assets/`: fotos, logotipos, imagens e favicon.
+- `CNAME`: mantém `darcisiofischer.com.br`.
+- `.nojekyll`: evita interferência na publicação estática.
