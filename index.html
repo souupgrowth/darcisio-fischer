@@ -609,6 +609,36 @@ h1,h2,.desktop-page h1,.desktop-page h2,.mobile-page h1,.mobile-page h2,
 }
 .reel-video{object-fit:cover;background:#0b0b0b}
 .reel-load-error{font:500 12px/1.5 'Lexend',sans-serif;text-align:center;padding:18px;color:#e7ce83}
+
+/* 28/10/2026 — AJUSTES PONTUAIS, APENAS DESKTOP
+   A faixa cobre as fotos antigas ainda incorporadas à imagem de fundo.
+   Título e quatro Reels são levemente deslocados para baixo. */
+@media (min-width:761px) {
+  .stage-three .results-background-mask {
+    position:absolute;left:0;top:0;width:100%;height:37.1%;
+    background:#000;z-index:3;pointer-events:none;
+  }
+  .stage-three .results-copy {top:5.1%;z-index:5;}
+  .stage-three .reels-desktop-surface {
+    top:2.8%;height:33.0%;z-index:5;
+    display:flex;align-items:flex-start;justify-content:center;
+    padding-top:.8cqw;background:#000;
+  }
+  /* Devolve o nome ao início da biografia, sem deslocar o título para baixo. */
+  .stage-one .about-copy {top:59.9%;}
+  .stage-one .about-copy > .eyebrow {
+    display:block;font-size:1.55cqw;line-height:1.45;
+    margin-bottom:1.25cqw;letter-spacing:.28em;
+  }
+}
+.reel-desktop-card,.reels-mobile-slide {position:relative;}
+.reel-load-error {
+  position:absolute;left:6%;right:6%;top:36%;margin:0;
+  padding:14px 10px;border-radius:9px;
+  background:rgba(6,6,6,.94);border:1px solid #b99749;
+  font:500 12px/1.5 Lexend,sans-serif;
+  color:#f0d58e;text-align:center;pointer-events:none;
+}
 </style>
 
 </head>
@@ -636,6 +666,7 @@ h1,h2,.desktop-page h1,.desktop-page h2,.mobile-page h1,.mobile-page h2,
     </div>
     <span id="sobre" class="section-anchor anchor-sobre" aria-hidden="true"></span>
 <section class="about-copy" aria-label="Sobre Darcísio Fischer">
+      <p class="eyebrow">DARCÍSIO FISCHER</p>
       <h2>Da tesoura à<br><span class="gold-gradient">estratégia</span></h2>
       <div class="about-paragraphs">
         <p>Nascido em 1977, em Pato Branco (PR), Darcísio Fischer mudou-se com a família para o Oeste de Santa Catarina em 1992. Em 1996, seguiu sozinho para Balneário Camboriú, onde iniciou sua carreira como cabeleireiro, em 2004.</p>
@@ -666,6 +697,7 @@ h1,h2,.desktop-page h1,.desktop-page h2,.mobile-page h1,.mobile-page h2,
   </section>
   <section class="stage stage-three" aria-label="Resultados, contato e perguntas frequentes">
     <img class="stage-image" src="imagens/secao-4-e-5.png" alt="Fotografias ilustrativas de antes e depois, assinatura dourada e logotipo Darcísio Fischer" width="1601" height="2048" loading="lazy">
+    <div class="results-background-mask" aria-hidden="true"></div>
     <section id="resultados" class="results-copy">
       <p class="eyebrow">RESULTADOS</p>
       <h2>Transformações<br><span class="gold-gradient">reais</span></h2>
@@ -966,7 +998,7 @@ testDialog.addEventListener('close',()=>{testState=null;testApp.replaceChildren(
       if(card && !card.querySelector('.reel-load-error')){
         const notice=document.createElement('p');
         notice.className='reel-load-error';
-        notice.textContent='Vídeo '+id+' indisponível. Confira o arquivo na pasta imagens.';
+        notice.textContent='Vídeo '+id+' não pôde ser reproduzido. Verifique o arquivo e exporte em MP4 (H.264), se necessário.';
         card.append(notice);
       }
     };
