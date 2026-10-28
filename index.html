@@ -4,6 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#000000">
+  <link rel="icon" href="imagens/foto-perfil-fischer.png" type="image/png" sizes="any">
+  <link rel="apple-touch-icon" href="imagens/foto-perfil-fischer.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="apple-mobile-web-app-title" content="Darcísio Fischer">
+  <meta name="application-name" content="Darcísio Fischer">
   <meta name="description" content="Darcísio Fischer, visagista. Conheça o Método Código da Imagem, descubra seu perfil e agende sua consultoria de imagem.">
   <title>Darcísio Fischer | Visagista — Código da Imagem</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -577,10 +582,41 @@ h1,h2,.desktop-page h1,.desktop-page h2,.mobile-page h1,.mobile-page h2,
 #test-app .retry-send{border:1px solid #d3af4b;border-radius:25px;background:#151109;color:#edcd74;padding:9px 16px;margin-top:9px;font-size:12px}
 @media(max-width:560px){#test-intro .test-intro-fields{grid-template-columns:1fr}}
 
+
+/* Refinamentos pedidos em 27/10/2026: sem alterar demais seções */
+.whatsapp-floating{
+  position:fixed;top:18px;right:18px;z-index:9999;
+  width:51px;height:51px;display:grid;place-items:center;
+  background:#25D366;border:2px solid #f4fff7;
+  border-radius:50%;box-shadow:0 5px 22px rgba(0,0,0,.5);
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+.whatsapp-floating svg{width:32px;height:32px;display:block}
+.whatsapp-floating:hover{transform:scale(1.055);box-shadow:0 7px 25px #0b7b3499}
+@media(min-width:761px){
+  /* Biografia inicia à direita da linha dourada incorporada à arte original. */
+  .stage-one .about-copy{left:45.8%;width:48.3%;top:62.7%;}
+  .stage-one .desktop-about-photo{display:none!important;}
+  .stage-three .reels-desktop-surface{top:1.25%;align-items:flex-start;padding-top:.7cqw;}
+}
+@media(max-width:760px){
+  /* O WhatsApp fica ao lado do menu, sem se sobrepor a ele. */
+  .whatsapp-floating{top:19px;right:79px;width:44px;height:44px}
+  .whatsapp-floating svg{width:28px;height:28px}
+  .m-about .m-photo-quote{display:none!important}
+  /* Como o nome estava duplicado, a história se inicia diretamente pelo título. */
+  .m-about .m-pad{padding-top:5px}
+}
+.reel-video{object-fit:cover;background:#0b0b0b}
+.reel-load-error{font:500 12px/1.5 'Lexend',sans-serif;text-align:center;padding:18px;color:#e7ce83}
 </style>
 
 </head>
 <body data-versao="landing-fischer-duas-fotos-2026-10-27">
+<a class="whatsapp-floating" href="https://wa.me/5547988454663?text=Ol%C3%A1%2C%20Darc%C3%ADsio%21%20Gostaria%20de%20saber%20mais%20sobre%20a%20consultoria." target="_blank" rel="noopener noreferrer" aria-label="Conversar com Darcísio pelo WhatsApp" title="Conversar pelo WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-hidden="true"><path fill="#fff" d="M16.03 3.2A12.74 12.74 0 0 0 5.16 22.58L3.2 29l6.6-1.73A12.78 12.78 0 1 0 16.03 3.2Zm0 22.98c-2.17 0-4.3-.59-6.15-1.7l-.44-.26-3.92 1.03 1.05-3.82-.29-.46a10.16 10.16 0 1 1 9.75 5.21Zm5.58-7.6c-.3-.15-1.79-.88-2.07-.98-.27-.1-.47-.15-.67.15-.2.3-.78.98-.96 1.18-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.43-1.5-.9-.8-1.5-1.79-1.68-2.1-.17-.3-.02-.47.13-.62.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.08-.15-.67-1.64-.93-2.24-.25-.59-.5-.5-.68-.52l-.58-.01c-.2 0-.54.08-.81.38-.28.3-1.06 1.04-1.06 2.52 0 1.48 1.08 2.92 1.24 3.12.15.2 2.12 3.25 5.16 4.56.72.31 1.28.5 1.73.64.73.23 1.38.2 1.91.12.58-.09 1.79-.73 2.04-1.43.25-.7.25-1.31.18-1.43-.08-.13-.28-.2-.58-.35Z"/></svg>
+</a>
+
 <!-- As 3 imagens permanecem no GitHub, sem alterações e sem cópias no ZIP. -->
 <main class="desktop-page" aria-label="Darcísio Fischer - Visagismo">
   <section class="stage stage-one" id="inicio" aria-label="Início e Sobre">
@@ -591,7 +627,7 @@ h1,h2,.desktop-page h1,.desktop-page h2,.mobile-page h1,.mobile-page h2,
     <div class="hero-brand-cleanup" aria-hidden="true"></div>
     <a href="#inicio" class="hero-brand" aria-label="Darcísio Fischer — início"><img src="imagens/logo-fischer.png" alt="Darcísio Fischer — Visagista" loading="eager"></a>
     <div class="hero-copy">
-      <h1>Sua imagem <br><span class="gold-gradient">comunica</span> antes<br> mesmo de você<br> dizer uma palavra.</h1>
+      <h1><span class="gold-gradient">Sua imagem</span> <br><span class="gold-gradient">comunica</span> antes<br> mesmo de você<br> dizer uma palavra.</h1>
       <p>O visagismo vai além da estética. É a arte de unir personalidade, estilo e expressão para criar uma imagem que revela o melhor de você.</p>
       <a class="cta-gold hero-cta" href="#teste">DESCUBRA O SEU PERFIL <span aria-hidden="true">➜</span></a>
     </div>
@@ -599,17 +635,12 @@ h1,h2,.desktop-page h1,.desktop-page h2,.mobile-page h1,.mobile-page h2,
       <div class="brand-marquee-track" aria-hidden="true"><span>IMAGEM &nbsp; • &nbsp; ESTRATÉGIA &nbsp; • &nbsp; AUTENTICIDADE &nbsp; • &nbsp; RESULTADO</span><span>IMAGEM &nbsp; • &nbsp; ESTRATÉGIA &nbsp; • &nbsp; AUTENTICIDADE &nbsp; • &nbsp; RESULTADO</span><span>IMAGEM &nbsp; • &nbsp; ESTRATÉGIA &nbsp; • &nbsp; AUTENTICIDADE &nbsp; • &nbsp; RESULTADO</span><span>IMAGEM &nbsp; • &nbsp; ESTRATÉGIA &nbsp; • &nbsp; AUTENTICIDADE &nbsp; • &nbsp; RESULTADO</span></div>
     </div>
     <span id="sobre" class="section-anchor anchor-sobre" aria-hidden="true"></span>
-    <div class="desktop-about-photo" aria-label="Retrato do visagista Darcísio Fischer">
-      <img src="imagens/fischer-desktop.png" alt="Darcísio Fischer em retrato, com terno preto" loading="lazy" decoding="async">
-      <blockquote class="desktop-photo-quote">“Sua identidade<br>já existe.<br>Eu a transformo<br>em presença.”</blockquote>
-    </div>
-    <section class="about-copy" aria-label="Sobre Darcísio Fischer">
-      <p class="eyebrow">DARCÍSIO FISCHER</p>
+<section class="about-copy" aria-label="Sobre Darcísio Fischer">
       <h2>Da tesoura à<br><span class="gold-gradient">estratégia</span></h2>
       <div class="about-paragraphs">
         <p>Nascido em 1977, em Pato Branco (PR), Darcísio Fischer mudou-se com a família para o Oeste de Santa Catarina em 1992. Em 1996, seguiu sozinho para Balneário Camboriú, onde iniciou sua carreira como cabeleireiro, em 2004.</p>
         <p>Em 2006, ampliou seus conhecimentos com uma formação internacional na escola Pivot Point, após a qual recebeu o título de <em>Hair Stylist</em>, consolidando mais uma etapa de sua trajetória de constante aperfeiçoamento. Em 2010, tornou-se visagista e, em 2016, coach e analista comportamental, expandindo seu olhar para além da estética.</p>
-        <p>A união de toda essa experiência e conhecimento deu origem ao Método Fischer — Código da Imagem, uma metodologia autoral que conecta beleza, identidade e comportamento.</p>
+        <p>A união de toda essa experiência e conhecimento deu origem ao Método Código da Imagem, uma metodologia autoral que conecta beleza, identidade e comportamento.</p>
       </div>
     </section>
   </section>
@@ -643,10 +674,10 @@ h1,h2,.desktop-page h1,.desktop-page h2,.mobile-page h1,.mobile-page h2,
     </section>
     <!-- Vídeos em formato 9:16; prévia obtida do próprio vídeo (0,8 s). -->
     <div class="reels-desktop-surface" aria-label="Quatro vídeos de transformações reais"><div class="reels-desktop-grid">
-      <div class="reel-desktop-card"><video class="reel-video" controls playsinline preload="metadata" data-preview-frame="0.8" data-alt-src="imagens/video-1.mp4" aria-label="Vídeo 1 de 4 — Transformações reais"><source src="imagens/video-1.mp4.mp4#t=0.8" type="video/mp4">Seu navegador não suporta vídeos. <a href="imagens/video-1.mp4.mp4">Abrir vídeo 1</a>.</video></div>
-      <div class="reel-desktop-card"><video class="reel-video" controls playsinline preload="metadata" data-preview-frame="0.8" data-alt-src="imagens/video-2.mp4.mp4" aria-label="Vídeo 2 de 4 — Transformações reais"><source src="imagens/video-2.mp4#t=0.8" type="video/mp4">Seu navegador não suporta vídeos. <a href="imagens/video-2.mp4">Abrir vídeo 2</a>.</video></div>
-      <div class="reel-desktop-card"><video class="reel-video" controls playsinline preload="metadata" data-preview-frame="0.8" data-alt-src="imagens/video-3.mp4.mp4" aria-label="Vídeo 3 de 4 — Transformações reais"><source src="imagens/video-3.mp4#t=0.8" type="video/mp4">Seu navegador não suporta vídeos. <a href="imagens/video-3.mp4">Abrir vídeo 3</a>.</video></div>
-      <div class="reel-desktop-card"><video class="reel-video" controls playsinline preload="metadata" data-preview-frame="0.8" data-alt-src="imagens/video-4.mp4.mp4" aria-label="Vídeo 4 de 4 — Transformações reais"><source src="imagens/video-4.mp4#t=0.8" type="video/mp4">Seu navegador não suporta vídeos. <a href="imagens/video-4.mp4">Abrir vídeo 4</a>.</video></div>
+      <div class="reel-desktop-card"><video data-clip-id="1" class="reel-video" controls playsinline preload="metadata" aria-label="Vídeo 1 de 4 — Transformações reais"><source src="imagens/video-1.MP4" type="video/mp4">Seu navegador não suporta vídeo HTML5.</video></div>
+      <div class="reel-desktop-card"><video data-clip-id="2" class="reel-video" controls playsinline preload="metadata" aria-label="Vídeo 2 de 4 — Transformações reais"><source src="imagens/video-2.MOV">Seu navegador não suporta vídeo HTML5.</video></div>
+      <div class="reel-desktop-card"><video data-clip-id="3" class="reel-video" controls playsinline preload="metadata" aria-label="Vídeo 3 de 4 — Transformações reais"><source src="imagens/video-3.mp4" type="video/mp4">Seu navegador não suporta vídeo HTML5.</video></div>
+      <div class="reel-desktop-card"><video data-clip-id="4" class="reel-video" controls playsinline preload="metadata" aria-label="Vídeo 4 de 4 — Transformações reais"><source src="imagens/video-4.mp4" type="video/mp4">Seu navegador não suporta vídeo HTML5.</video></div>
     </div></div>
     <section class="contact-copy" id="contato">
       <p class="eyebrow">VAMOS CONVERSAR?</p>
@@ -682,8 +713,8 @@ h1,h2,.desktop-page h1,.desktop-page h2,.mobile-page h1,.mobile-page h2,
     <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-controls="mobile-nav" aria-expanded="false">☰</button>
     <nav id="mobile-nav" class="mobile-nav" hidden><a href="#m-inicio">Início</a><a href="#m-sobre">Sobre</a><a href="#m-visagismo">Visagismo</a><a href="#m-teste">Teste</a><a href="#m-metodo">Método</a><a href="#m-resultados">Resultados</a><a href="#m-faq">FAQ</a></nav>
   </header>
-  <section class="m-hero" id="m-inicio"><div class="m-people" role="img" aria-label="Mulher e homem com marcações faciais"></div><div class="m-pad"><h1>Sua imagem <span class="gold-gradient">comunica</span> antes mesmo de você dizer uma palavra.</h1><p>O visagismo vai além da estética. É a arte de unir personalidade, estilo e expressão para criar uma imagem que revela o melhor de você.</p><a class="cta-gold" href="#m-teste">DESCUBRA O SEU PERFIL ➜</a><div class="m-marquee-band" aria-label="Imagem, estratégia, autenticidade e resultado"><div class="m-marquee-track" aria-hidden="true"><span class="m-marquee-copy">IMAGEM &nbsp; • &nbsp; ESTRATÉGIA &nbsp; • &nbsp; AUTENTICIDADE &nbsp; • &nbsp; RESULTADO &nbsp; • &nbsp; </span><span class="m-marquee-copy">IMAGEM &nbsp; • &nbsp; ESTRATÉGIA &nbsp; • &nbsp; AUTENTICIDADE &nbsp; • &nbsp; RESULTADO &nbsp; • &nbsp; </span></div></div></div></section>
-  <section class="m-about" id="m-sobre"><div class="m-portrait"><img src="imagens/fischer-mobile.png" alt="Retrato de Darcísio Fischer usando terno preto" loading="lazy" decoding="async"><blockquote class="m-photo-quote">“Sua identidade<br>já existe.<br>Eu a transformo<br>em presença.”</blockquote></div><div class="m-pad"><p class="eyebrow">DARCÍSIO FISCHER</p><h2>Da tesoura à <span class="gold-gradient">estratégia</span></h2><div class="m-bio"><p>Nascido em 1977, em Pato Branco (PR), Darcísio Fischer mudou-se com a família para o Oeste de Santa Catarina em 1992. Em 1996, seguiu sozinho para Balneário Camboriú, onde iniciou sua carreira como cabeleireiro, em 2004.</p><p>Em 2006, ampliou seus conhecimentos com uma formação internacional na escola Pivot Point, após a qual recebeu o título de <em>Hair Stylist</em>, consolidando mais uma etapa de sua trajetória de constante aperfeiçoamento. Em 2010, tornou-se visagista e, em 2016, coach e analista comportamental, expandindo seu olhar para além da estética.</p><p>A união de toda essa experiência e conhecimento deu origem ao Método Fischer — Código da Imagem, uma metodologia autoral que conecta beleza, identidade e comportamento.</p></div></div></section>
+  <section class="m-hero" id="m-inicio"><div class="m-people" role="img" aria-label="Mulher e homem com marcações faciais"></div><div class="m-pad"><h1><span class="gold-gradient">Sua imagem</span> <span class="gold-gradient">comunica</span> antes mesmo de você dizer uma palavra.</h1><p>O visagismo vai além da estética. É a arte de unir personalidade, estilo e expressão para criar uma imagem que revela o melhor de você.</p><a class="cta-gold" href="#m-teste">DESCUBRA O SEU PERFIL ➜</a><div class="m-marquee-band" aria-label="Imagem, estratégia, autenticidade e resultado"><div class="m-marquee-track" aria-hidden="true"><span class="m-marquee-copy">IMAGEM &nbsp; • &nbsp; ESTRATÉGIA &nbsp; • &nbsp; AUTENTICIDADE &nbsp; • &nbsp; RESULTADO &nbsp; • &nbsp; </span><span class="m-marquee-copy">IMAGEM &nbsp; • &nbsp; ESTRATÉGIA &nbsp; • &nbsp; AUTENTICIDADE &nbsp; • &nbsp; RESULTADO &nbsp; • &nbsp; </span></div></div></div></section>
+  <section class="m-about" id="m-sobre"><div class="m-portrait"><img src="imagens/fischer-mobile.png" alt="Retrato de Darcísio Fischer usando terno preto" loading="lazy" decoding="async"></div><div class="m-pad"><h2>Da tesoura à <span class="gold-gradient">estratégia</span></h2><div class="m-bio"><p>Nascido em 1977, em Pato Branco (PR), Darcísio Fischer mudou-se com a família para o Oeste de Santa Catarina em 1992. Em 1996, seguiu sozinho para Balneário Camboriú, onde iniciou sua carreira como cabeleireiro, em 2004.</p><p>Em 2006, ampliou seus conhecimentos com uma formação internacional na escola Pivot Point, após a qual recebeu o título de <em>Hair Stylist</em>, consolidando mais uma etapa de sua trajetória de constante aperfeiçoamento. Em 2010, tornou-se visagista e, em 2016, coach e analista comportamental, expandindo seu olhar para além da estética.</p><p>A união de toda essa experiência e conhecimento deu origem ao Método Código da Imagem, uma metodologia autoral que conecta beleza, identidade e comportamento.</p></div></div></section>
   <section class="m-vis m-pad" id="m-visagismo"><p class="eyebrow">O QUE É VISAGISMO?</p><h2>Não se trata apenas de aparência. Trata-se de <span class="gold-gradient">identidade.</span></h2><div class="carousel-root mobile-vis-carousel" data-carousel="visagismo"></div></section>
   <section class="m-test m-pad" id="m-teste">
     <div class="m-test-poster-wrap">
@@ -696,10 +727,10 @@ h1,h2,.desktop-page h1,.desktop-page h2,.mobile-page h1,.mobile-page h2,
   <div class="reels-mobile-shell">
     <button type="button" class="reels-mobile-arrow" data-reel-prev aria-label="Vídeo anterior">‹</button>
     <div class="reels-mobile-viewport"><div class="reels-mobile-track">
-      <div class="reels-mobile-slide"><video class="reel-video" controls playsinline preload="metadata" data-preview-frame="0.8" data-alt-src="imagens/video-1.mp4" aria-label="Vídeo 1 de 4 — Transformações reais"><source src="imagens/video-1.mp4.mp4#t=0.8" type="video/mp4">Seu navegador não suporta vídeos. <a href="imagens/video-1.mp4.mp4">Abrir vídeo 1</a>.</video></div>
-      <div class="reels-mobile-slide"><video class="reel-video" controls playsinline preload="metadata" data-preview-frame="0.8" data-alt-src="imagens/video-2.mp4.mp4" aria-label="Vídeo 2 de 4 — Transformações reais"><source src="imagens/video-2.mp4#t=0.8" type="video/mp4">Seu navegador não suporta vídeos. <a href="imagens/video-2.mp4">Abrir vídeo 2</a>.</video></div>
-      <div class="reels-mobile-slide"><video class="reel-video" controls playsinline preload="metadata" data-preview-frame="0.8" data-alt-src="imagens/video-3.mp4.mp4" aria-label="Vídeo 3 de 4 — Transformações reais"><source src="imagens/video-3.mp4#t=0.8" type="video/mp4">Seu navegador não suporta vídeos. <a href="imagens/video-3.mp4">Abrir vídeo 3</a>.</video></div>
-      <div class="reels-mobile-slide"><video class="reel-video" controls playsinline preload="metadata" data-preview-frame="0.8" data-alt-src="imagens/video-4.mp4.mp4" aria-label="Vídeo 4 de 4 — Transformações reais"><source src="imagens/video-4.mp4#t=0.8" type="video/mp4">Seu navegador não suporta vídeos. <a href="imagens/video-4.mp4">Abrir vídeo 4</a>.</video></div>
+      <div class="reels-mobile-slide"><video data-clip-id="1" class="reel-video" controls playsinline preload="metadata" aria-label="Vídeo 1 de 4 — Transformações reais"><source src="imagens/video-1.MP4" type="video/mp4">Seu navegador não suporta vídeo HTML5.</video></div>
+      <div class="reels-mobile-slide"><video data-clip-id="2" class="reel-video" controls playsinline preload="metadata" aria-label="Vídeo 2 de 4 — Transformações reais"><source src="imagens/video-2.MOV">Seu navegador não suporta vídeo HTML5.</video></div>
+      <div class="reels-mobile-slide"><video data-clip-id="3" class="reel-video" controls playsinline preload="metadata" aria-label="Vídeo 3 de 4 — Transformações reais"><source src="imagens/video-3.mp4" type="video/mp4">Seu navegador não suporta vídeo HTML5.</video></div>
+      <div class="reels-mobile-slide"><video data-clip-id="4" class="reel-video" controls playsinline preload="metadata" aria-label="Vídeo 4 de 4 — Transformações reais"><source src="imagens/video-4.mp4" type="video/mp4">Seu navegador não suporta vídeo HTML5.</video></div>
     </div></div>
     <button type="button" class="reels-mobile-arrow" data-reel-next aria-label="Próximo vídeo">›</button>
   </div>
@@ -709,7 +740,7 @@ h1,h2,.desktop-page h1,.desktop-page h2,.mobile-page h1,.mobile-page h2,
   <section class="m-faq m-pad" id="m-faq"><p class="eyebrow">PERGUNTAS FREQUENTES</p><h2>TIRE SUAS <span class="gold-gradient">DÚVIDAS</span></h2><div class="faq-items"><details name="m-faq"><summary>O que é visagismo?</summary><p>O visagismo considera traços faciais, identidade, personalidade e objetivos para orientar escolhas de imagem.</p></details><details name="m-faq"><summary>Quais os benefícios do visagismo?</summary><p>Ajuda a criar uma imagem mais autêntica, coerente e alinhada aos seus objetivos.</p></details><details name="m-faq"><summary>Como funciona a consultoria?</summary><p>A consultoria começa com uma conversa e uma avaliação personalizada de identidade e objetivos.</p></details><details name="m-faq"><summary>Quanto tempo dura o atendimento?</summary><p>A duração varia conforme a necessidade. Converse com Darcísio para mais detalhes.</p></details><details name="m-faq"><summary>O visagismo atende apenas homens?</summary><p>Não. O atendimento é individual e destinado a mulheres e homens.</p></details></div></section>
   <footer class="m-footer"><div class="m-footer-social"><a href="https://www.instagram.com/darcisiofischervisagista/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Darcísio Fischer"><svg viewBox="0 0 24 24" width="25" height="25" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.25"/><circle cx="18" cy="6" r="1" fill="currentColor" stroke="none"/></svg></a><button type="button" data-tiktok aria-label="TikTok — endereço ainda não informado"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M15.34 1.5H11.7v14.17a3.05 3.05 0 1 1-2.64-3.03V9.01a6.63 6.63 0 1 0 6.28 6.66V8.17a9.04 9.04 0 0 0 5.13 1.64V6.14a5.5 5.5 0 0 1-5.13-4.64Z"/></svg></button></div><a class="m-footer-brand" href="#m-inicio" aria-label="Darcísio Fischer — Visagista, voltar ao início"><img src="imagens/logo-fischer.png" alt="Darcísio Fischer — Visagista" width="740" height="269" loading="lazy"></a><p>© 2026 Sou Up Company. Todos os direitos reservados.</p><a href="#m-inicio">VOLTAR AO INÍCIO ↑</a></footer>
 </div>
-<!-- Cadastro e teste: envio pelo Web3Forms somente após autorização e conclusão, quando configurado. -->
+<!-- Cadastro e teste: registro no Google Sheets e e-mail exclusivo para Darcísio via Google Apps Script. -->
 <dialog id="test-dialog" class="lux-dialog"><div class="dialog-frame">
   <button type="button" class="dialog-close" data-close-test aria-label="Fechar teste">×</button>
   <div id="test-app" aria-live="polite"></div>
@@ -718,13 +749,12 @@ h1,h2,.desktop-page h1,.desktop-page h2,.mobile-page h1,.mobile-page h2,
 <dialog id="notice-dialog" class="lux-dialog info-dialog"><div class="dialog-frame"><button class="dialog-close" type="button" data-close-notice aria-label="Fechar">×</button><h2>Link ainda não configurado</h2><p>O endereço oficial dessa rede social será adicionado quando for informado.</p><button class="cta-gold" type="button" data-close-notice>ENTENDI</button></div></dialog>
   <script>
 'use strict';
-/** Landing estática: resultados enviados via Web3Forms apenas após conclusão e consentimento, se houver chave configurada. */
+/** Landing estática: resultados e cadastros encaminhados ao Google Apps Script após conclusão e consentimento. */
 const CONFIG = {
   instagramUrl: '', // inserir a URL oficial completa quando informada
   tiktokUrl: '', // inserir a URL oficial completa quando informada
   whatsapp: '5547988454663',
-  web3FormsAccessKey: '', // Inserir chave Web3Forms cadastrada em darcisiofischer@gmail.com
-  web3FormsRecipient: 'darcisiofischer@gmail.com' // Apenas referência: destino real é definido pela chave
+  appsScriptUrl: '' // Insira aqui a URL /exec da implantação do Google Apps Script
 };
 const ICONS = {
   brain: `<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 8C15 2 8 8 9 16c-8 4-7 15 1 17 0 7 8 11 14 6V8Zm0 0c9-6 16 0 15 8 8 4 7 15-1 17 0 7-8 11-14 6V8Z"/><path d="M14 14c5 0 7 3 7 7m-11 3c5-2 8 1 8 6m6-9h-5m15-7c-5 0-7 3-7 7m11 3c-5-2-8 1-8 6m-6-9h5"/></svg>`,
@@ -813,8 +843,7 @@ const testApp=document.querySelector('#test-app');
 let testState=null;
 const escapeHTML=v=>String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function intro(){
- const activeDelivery=Boolean(CONFIG.web3FormsAccessKey.trim());
- testApp.innerHTML=`<p class="eyebrow">TESTE DE TEMPERAMENTO</p><h2>Conheça seu perfil</h2><p class="quiz-muted">Para descobrir o seu temperamento, basta responder às perguntas abaixo. Responda com sinceridade e volte a cada pergunta sempre que achar necessário.</p><p class="quiz-note">⏱ Tempo estimado: cerca de 5 minutos.</p><h3 style="font-family:'Lora',Georgia,serif;font-size:23px;margin:16px 0 10px">Antes de começar</h3><p class="quiz-muted">Preencha os quatro campos obrigatórios para realizar o teste. O resultado será exibido ao finalizar.</p><form id="test-intro" style="margin-top:12px"><div class="test-intro-fields"><label>Nome completo *<input name="nome" autocomplete="name" maxlength="100" placeholder="Seu nome completo" required></label><label>WhatsApp com DDD *<input name="telefone" type="tel" autocomplete="tel" placeholder="(47) 99999-9999" maxlength="18" inputmode="tel" required></label><label>E-mail *<input name="email" type="email" autocomplete="email" maxlength="180" placeholder="seuemail@exemplo.com" required></label><label>Data de nascimento *<input name="nascimento" type="date" autocomplete="bday" required></label></div><label class="test-intro-consent"><input name="consentimento" type="checkbox" required><span>Estou ciente e autorizo o uso dos meus dados e das respostas para avaliação de temperamento e contato sobre a consultoria. ${activeDelivery?'Ao concluir, as informações serão encaminhadas a Darcísio Fischer através do serviço Web3Forms.':'O envio por e-mail ainda não está habilitado; os dados permanecerão apenas nesta sessão do navegador.'}</span></label><button class="cta-gold" type="submit" style="width:100%">INICIAR O TESTE →</button></form>`;
+ testApp.innerHTML=`<p class="eyebrow">TESTE DE TEMPERAMENTO</p><h2>Conheça seu perfil</h2><p class="quiz-muted">Para descobrir o seu temperamento, basta responder às perguntas abaixo. Responda com sinceridade e volte a cada pergunta sempre que achar necessário.</p><p class="quiz-note">⏱ Tempo estimado: cerca de 5 minutos.</p><h3 style="font-family:'Lora',Georgia,serif;font-size:23px;margin:16px 0 10px">Antes de começar</h3><p class="quiz-muted">Preencha os quatro campos obrigatórios para realizar o teste. O resultado será exibido ao finalizar.</p><form id="test-intro" style="margin-top:12px"><div class="test-intro-fields"><label>Nome completo *<input name="nome" autocomplete="name" maxlength="100" placeholder="Seu nome completo" required></label><label>WhatsApp com DDD *<input name="telefone" type="tel" autocomplete="tel" placeholder="(47) 99999-9999" maxlength="18" inputmode="tel" required></label><label>E-mail *<input name="email" type="email" autocomplete="email" maxlength="180" placeholder="seuemail@exemplo.com" required></label><label>Data de nascimento *<input name="nascimento" type="date" autocomplete="bday" required></label></div><label class="test-intro-consent"><input name="consentimento" type="checkbox" required><span>Estou ciente e autorizo o uso dos meus dados para realizar o teste e atender eventual pedido de consultoria. Os dados não serão vendidos ou compartilhados com terceiros para fins comerciais.</span></label><label class="test-intro-consent"><input name="marketing" type="checkbox"><span>Opcional: autorizo receber contatos sobre consultorias e serviços do Darcísio por WhatsApp ou e-mail.</span></label><button class="cta-gold" type="submit" style="width:100%">INICIAR O TESTE →</button></form>`;
  const form=testApp.querySelector('form');
  const birthday=form.elements.namedItem('nascimento');
  const dateToday=new Date();
@@ -830,7 +859,7 @@ function intro(){
   if(digits.length<10||digits.length>11){alert('Informe um WhatsApp com DDD (10 ou 11 dígitos).');return}
   if(!/^\d{4}-\d{2}-\d{2}$/.test(dob)||dob>localToday||Number.isNaN(new Date(dob+'T12:00:00').getTime())){alert('Informe uma data de nascimento válida.');return}
   if(!form.checkValidity()){form.reportValidity();return}
-  testState={name:fullName,phone:digits,email,birthDate:dob,consented:true,answers:Array(44).fill(null),index:0,delivered:false,deliveryInProgress:false};
+  testState={name:fullName,phone:digits,email,birthDate:dob,consented:true,marketing:fd.get('marketing')==='on',answers:Array(44).fill(null),index:0,submitted:false,deliveryInProgress:false,submissionId:(window.crypto?.randomUUID?.()||String(Date.now())+'-'+Math.random().toString(36).slice(2))};
   renderQuestion();
  });
 }
@@ -842,36 +871,31 @@ function renderQuestion(){
  testApp.querySelector('[data-quiz-back]').addEventListener('click',()=>{if(st.index>0){st.index--;renderQuestion()}});
  testApp.querySelector('[data-quiz-next]').addEventListener('click',()=>{if(st.answers[i]===null)return;if(st.index<43){st.index++;renderQuestion()}else{renderResult()}});
 }
-async function sendResultToDarcisio(primary,secondary,sums,tied){
+async function submitResultToSheets(){
  const st=testState;
- const status=document.getElementById('quiz-delivery-status');
- if(!status||!st)return;
- if(!CONFIG.web3FormsAccessKey.trim()){
-  status.textContent='O resultado foi exibido. O envio automático ao Darcísio ainda não está habilitado; falta configurar a chave Web3Forms.';
+ if(!st||!st.consented||st.submitted||st.deliveryInProgress)return;
+ const endpoint=String(CONFIG.appsScriptUrl||'').trim();
+ if(!/^https:\/\/script\.google\.com\/macros\/s\/[^\s]+\/exec(?:\?.*)?$/.test(endpoint)){
+  console.warn('Teste finalizado, mas o endereço /exec do Apps Script ainda precisa ser configurado.');
   return;
  }
- if(!st.consented||st.delivered||st.deliveryInProgress)return;
- st.deliveryInProgress=true;status.classList.remove('error');status.textContent='Enviando seus dados e resultado ao Darcísio…';
- const options=['Discordo totalmente','Discordo parcialmente','Concordo parcialmente','Concordo totalmente'];
- const detail=QUESTIONS.map((q,i)=>`${i+1}. ${q}\nResposta: ${options[st.answers[i]]}`).join('\n\n');
- const summary=`Perfil: ${primary} + ${secondary}${tied?' (empate na pontuação principal)':''}\nSanguíneo: ${sums[0]}/33\nMelancólico: ${sums[1]}/33\nColérico: ${sums[2]}/33\nFleumático: ${sums[3]}/33`;
- const payload={access_key:CONFIG.web3FormsAccessKey.trim(),from_name:'Darcísio Fischer — Teste de Temperamento',subject:`Novo teste de temperamento — ${st.name}`,
-  name:st.name,email:st.email,telefone:st.phone,data_nascimento:st.birthDate,
-  resultado:summary,consentimento:'Sim, autorizado pelo participante no cadastro do teste',respostas:detail,
-  botcheck:false};
+ const dados={
+  nome:st.name,whatsapp:st.phone,email:st.email,dataNascimento:st.birthDate,
+  aceitePrivacidade:st.consented,autorizacaoMarketing:st.marketing,
+  respostas:st.answers.slice(),identificador:st.submissionId,website:''
+ };
+ st.deliveryInProgress=true;
  try{
-  const response=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)});
-  const data=await response.json();
-  if(!response.ok||data.success!==true)throw new Error(data.message||'Não foi possível confirmar o envio.');
-  st.delivered=true;
-  if(document.getElementById('quiz-delivery-status')===status){status.textContent='Dados e resultado encaminhados ao e-mail associado à chave Web3Forms. Confira também o spam, se necessário.';}
- }catch(err){
-  if(document.getElementById('quiz-delivery-status')===status){
-   status.classList.add('error');status.textContent='Não foi possível confirmar o envio. Seu resultado continua visível. Tente novamente.';
-   const retry=document.createElement('button');retry.className='retry-send';retry.type='button';retry.textContent='TENTAR ENVIO NOVAMENTE';retry.addEventListener('click',()=>{retry.remove();sendResultToDarcisio(primary,secondary,sums,tied)});status.appendChild(document.createElement('br'));status.appendChild(retry);
-  }
- }finally{st.deliveryInProgress=false}
+  // No GitHub Pages o Google Apps Script não oferece resposta CORS legível.
+  // O modo no-cors envia o POST; a confirmação real é a linha na planilha.
+  const form=new URLSearchParams();form.set('payload',JSON.stringify(dados));
+  await fetch(endpoint,{method:'POST',mode:'no-cors',body:form});
+  st.submitted=true;
+ }catch(erro){
+  console.error('Não foi possível solicitar o registro do teste no Apps Script:',erro);
+ }finally{st.deliveryInProgress=false;}
 }
+
 function renderResult(){
  const sums=[0,0,0,0];testState.answers.forEach((score,i)=>{sums[Math.floor(i/11)]+=score??0});
  const order=[0,1,2,3].sort((a,b)=>sums[b]-sums[a]||a-b);
@@ -881,9 +905,9 @@ function renderResult(){
  const scoreRows=order.map((k,i)=>`<div><strong>${['Primário','Secundário','Terciário','Menor pontuação'][i]}</strong>${TYPES[k]} · ${sums[k]}/33 pontos</div>`).join('');
  const message=`Olá, Darcísio! Fiz o teste de temperamento no seu site. Meu perfil indicado foi ${primary} / ${secondary}. Quero saber mais sobre a consultoria completa de imagem.`;
  const url=`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(message)}`;
- testApp.innerHTML=`<p class="eyebrow">SEU RESULTADO</p><h2>${escapeHTML(testState.name.split(' ')[0])}, conheça seu perfil</h2><p class="quiz-muted">Esta é uma leitura exploratória de tendências comportamentais com base nas respostas informadas.</p><h3 class="quiz-result-title">${primary} + ${secondary}</h3><div class="quiz-result-grid">${scoreRows}</div>${tied?'<p class="quiz-note">Houve empate entre os temperamentos mais pontuados; por isso, não é possível afirmar predominância clara.</p>':''}<div class="result-detail"><h3>Como esse perfil costuma se expressar</h3><p>O perfil ${primary.toLowerCase()} foi o mais pontuado, seguido pelo ${secondary.toLowerCase()}. Essa combinação sugere tendências que podem aparecer de formas diferentes conforme a situação, a experiência e o contexto.</p><h3>Pontos fortes</h3><p>${descriptions.strength}</p><h3>Pontos de atenção</h3><p>${descriptions.care}</p><h3>O que isso pode representar na sua imagem</h3><p>${descriptions.image} A consultoria considera também características individuais, desejos, rotina e objetivos — muito além de um resultado de questionário.</p></div><div class="quiz-result-cta"><h3>Seu temperamento é apenas o começo. Sua imagem pode comunicar quem você é.</h3><p>Conheça a consultoria completa do Método Código da Imagem e descubra como unir sua essência, sua personalidade e seus objetivos em uma presença autêntica.</p><a class="cta-gold" href="${url}" target="_blank" rel="noopener noreferrer">QUERO MINHA CONSULTORIA →</a></div><p class="quiz-note">Resultado informativo, sem finalidade de diagnóstico psicológico.</p><p id="quiz-delivery-status" class="quiz-delivery-status" role="status" aria-live="polite"></p>`;
+ testApp.innerHTML=`<p class="eyebrow">SEU RESULTADO</p><h2>${escapeHTML(testState.name.split(' ')[0])}, conheça seu perfil</h2><p class="quiz-muted">Esta é uma leitura exploratória de tendências comportamentais com base nas respostas informadas.</p><h3 class="quiz-result-title">${primary} + ${secondary}</h3><div class="quiz-result-grid">${scoreRows}</div>${tied?'<p class="quiz-note">Houve empate entre os temperamentos mais pontuados; por isso, não é possível afirmar predominância clara.</p>':''}<div class="result-detail"><h3>Como esse perfil costuma se expressar</h3><p>O perfil ${primary.toLowerCase()} foi o mais pontuado, seguido pelo ${secondary.toLowerCase()}. Essa combinação sugere tendências que podem aparecer de formas diferentes conforme a situação, a experiência e o contexto.</p><h3>Pontos fortes</h3><p>${descriptions.strength}</p><h3>Pontos de atenção</h3><p>${descriptions.care}</p><h3>O que isso pode representar na sua imagem</h3><p>${descriptions.image} A consultoria considera também características individuais, desejos, rotina e objetivos — muito além de um resultado de questionário.</p></div><div class="quiz-result-cta"><h3>Seu temperamento é apenas o começo. Sua imagem pode comunicar quem você é.</h3><p>Conheça a consultoria completa do Método Código da Imagem e descubra como unir sua essência, sua personalidade e seus objetivos em uma presença autêntica.</p><a class="cta-gold" href="${url}" target="_blank" rel="noopener noreferrer">QUERO MINHA CONSULTORIA →</a></div><p class="quiz-note">Resultado informativo, sem finalidade de diagnóstico psicológico.</p>`;
  testApp.scrollIntoView({block:'start'});
- sendResultToDarcisio(primary,secondary,sums,tied);
+ submitResultToSheets();
 }
 document.querySelectorAll('[data-open-test]').forEach(b=>b.addEventListener('click',()=>{testState=null;intro();testDialog.showModal()}));
 document.querySelector('[data-close-test]').addEventListener('click',()=>testDialog.close());
@@ -892,7 +916,7 @@ testDialog.addEventListener('close',()=>{testState=null;testApp.replaceChildren(
   </script>
 
 <script>
-/* Apenas a navegação dos vídeos do mobile; o código original do site permanece. */
+/* Player responsivo: usa os nomes reais dos vídeos e tenta extrair capas de seus quadros. */
 (()=>{
   const track=document.querySelector('.reels-mobile-track');
   const pager=document.getElementById('reels-current');
@@ -903,33 +927,75 @@ testDialog.addEventListener('close',()=>{testState=null;testApp.replaceChildren(
     active=(active+step+total)%total;
     track.style.transform='translateX(-'+(active*100)+'%)';
     if(pager)pager.textContent=String(active+1);
-    track.querySelectorAll('video').forEach(v=>{if(!v.paused)v.pause()});
+    document.querySelectorAll('.reel-video').forEach(v=>{if(!v.paused)v.pause()});
   }
   document.querySelector('[data-reel-prev]')?.addEventListener('click',()=>go(-1));
   document.querySelector('[data-reel-next]')?.addEventListener('click',()=>go(1));
-  // Seleciona um quadro do próprio MP4 para ser exibido como prévia.
-  // Em alguns iPhones o frame pode depender do carregamento de dados pelo navegador.
-  document.querySelectorAll('video[data-preview-frame]').forEach(v=>{
-    const source=v.querySelector('source');
-    source?.addEventListener('error',()=>{
-      if(v.dataset.alternativeTried==='1'||!v.dataset.altSrc)return;
-      v.dataset.alternativeTried='1';
-      source.src=v.dataset.altSrc+'#t=0.8';
-      v.load();
-    });
-    v.addEventListener('loadedmetadata',()=>{
-      if(v.dataset.thumbnailReady==='1')return;
-      v.dataset.thumbnailReady='1';
-      const at=parseFloat(v.dataset.previewFrame||'0.8');
-      if(Number.isFinite(v.duration)&&v.duration>at){
-        try{v.currentTime=at;}catch(e){}
+  // Arquivos na pasta imagens; variantes antigas mantidas apenas como fallback.
+  const videos=[...document.querySelectorAll('.reel-video[data-clip-id]')];
+  const covers=new Map();
+  videos.forEach(video=>{
+    const id=video.dataset.clipId;
+    const src=video.querySelector('source');
+    if(!src)return;
+    // Respeitar EXATAMENTE o nome e a extensão do GitHub (maiúsculas incluídas).
+    // O segundo arquivo está em MOV; oferecer MP4 como opção caso seja convertido.
+    const options={
+      '1':['imagens/video-1.MP4','imagens/video-1.mp4','imagens/video-1.mp4.mp4'],
+      '2':['imagens/video-2.MOV','imagens/video-2.mp4','imagens/video-2.mp4.mp4'],
+      '3':['imagens/video-3.mp4','imagens/video-3.mp4.mp4'],
+      '4':['imagens/video-4.mp4','imagens/video-4.mp4.mp4']
+    };
+    const candidates=options[id]||[];
+    let candidate=0,hasPlayed=false,coverAttempted=false,hasCover=false;
+    function setVideoFile(filename){
+      src.src=filename;
+      // Sem 'type' no MOV: deixa o navegador tentar detectar os codecs disponíveis.
+      if(/\.mov$/i.test(filename))src.removeAttribute('type');
+      else src.type='video/mp4';
+      video.load();
+    }
+    video.preload='metadata';
+    if(candidates.length)setVideoFile(candidates[0]);
+    const onError=()=>{
+      candidate++;
+      if(candidate<candidates.length){
+        setVideoFile(candidates[candidate]);return;
       }
+      const card=video.closest('.reel-desktop-card,.reels-mobile-slide');
+      if(card && !card.querySelector('.reel-load-error')){
+        const notice=document.createElement('p');
+        notice.className='reel-load-error';
+        notice.textContent='Vídeo '+id+' indisponível. Confira o arquivo na pasta imagens.';
+        card.append(notice);
+      }
+    };
+    video.addEventListener('error',onError);
+    video.addEventListener('loadedmetadata',()=>{
+      if(covers.has(id)){video.poster=covers.get(id);return}
+      if(hasPlayed||coverAttempted||!Number.isFinite(video.duration)||video.duration<=0.15)return;
+      coverAttempted=true;
+      try{video.currentTime=Math.min(1.1,video.duration/3)}catch(e){}
+    });
+    video.addEventListener('seeked',()=>{
+      if(hasPlayed||hasCover||video.videoWidth<=0)return;
+      try{
+        const canvas=document.createElement('canvas');
+        canvas.width=270;canvas.height=480;
+        const context=canvas.getContext('2d');
+        const w=video.videoWidth,h=video.videoHeight,scale=Math.max(270/w,480/h);
+        const sw=270/scale,sh=480/scale;
+        context.drawImage(video,(w-sw)/2,(h-sh)/2,sw,sh,0,0,270,480);
+        const cover=canvas.toDataURL('image/jpeg',.78);
+        covers.set(id,cover);hasCover=true;
+        videos.filter(v=>v.dataset.clipId===id).forEach(v=>v.poster=cover);
+      }catch(e){console.warn('Prévia automática não disponível para o vídeo '+id,e)}
+    });
+    video.addEventListener('play',()=>{
+      hasPlayed=true;
+      videos.forEach(other=>{if(other!==video&&!other.paused)other.pause()});
     });
   });
-  // Evita dois vídeos reproduzindo áudio ao mesmo tempo.
-  document.querySelectorAll('.reel-video').forEach(v=>v.addEventListener('play',()=>{
-    document.querySelectorAll('.reel-video').forEach(other=>{if(other!==v&&!other.paused)other.pause()});
-  }));
 })();
 </script>
 </body></html>
