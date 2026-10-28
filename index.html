@@ -669,6 +669,24 @@ h1,h2,.desktop-page h1,.desktop-page h2,.mobile-page h1,.mobile-page h2,
   .whatsapp-floating svg {width:29px;height:29px;}
   .mobile-page > section {scroll-margin-top:12px;}
 }
+
+/* Ajuste pontual 28/10: apenas mobile. O nome está incorporado
+   na foto fischer-mobile.png; esta cobertura escurecida suave o oculta
+   sem alterar o arquivo de imagem, sua frase ou a versão desktop. */
+@media (max-width:760px) {
+  .m-about .m-portrait .m-photo-name-cover {
+    position:absolute;
+    z-index:2;
+    left:25%;
+    top:74.8%;
+    width:51%;
+    height:9%;
+    pointer-events:none;
+    background:#050505;
+    -webkit-mask-image:radial-gradient(ellipse at center,#000 55%,transparent 75%);
+    mask-image:radial-gradient(ellipse at center,#000 55%,transparent 75%);
+  }
+}
 </style>
 
 </head>
@@ -775,7 +793,7 @@ h1,h2,.desktop-page h1,.desktop-page h2,.mobile-page h1,.mobile-page h2,
   </header>
   <nav id="mobile-nav" class="mobile-nav" aria-label="Navegação da versão mobile"><a href="#m-inicio">Início</a><a href="#m-sobre">Sobre</a><a href="#m-visagismo">Visagismo</a><a href="#m-teste">Teste</a><a href="#m-metodo">Método</a><a href="#m-resultados">Resultados</a><a href="#m-faq">FAQ</a></nav>
   <section class="m-hero" id="m-inicio"><div class="m-people" role="img" aria-label="Mulher e homem com marcações faciais"></div><div class="m-pad"><h1><span class="gold-gradient">Sua imagem</span> <span class="gold-gradient">comunica</span> antes mesmo de você dizer uma palavra.</h1><p>O visagismo vai além da estética. É a arte de unir personalidade, estilo e expressão para criar uma imagem que revela o melhor de você.</p><a class="cta-gold" href="#m-teste">DESCUBRA O SEU PERFIL ➜</a><div class="m-marquee-band" aria-label="Imagem, estratégia, autenticidade e resultado"><div class="m-marquee-track" aria-hidden="true"><span class="m-marquee-copy">IMAGEM &nbsp; • &nbsp; ESTRATÉGIA &nbsp; • &nbsp; AUTENTICIDADE &nbsp; • &nbsp; RESULTADO &nbsp; • &nbsp; </span><span class="m-marquee-copy">IMAGEM &nbsp; • &nbsp; ESTRATÉGIA &nbsp; • &nbsp; AUTENTICIDADE &nbsp; • &nbsp; RESULTADO &nbsp; • &nbsp; </span></div></div></div></section>
-  <section class="m-about" id="m-sobre"><div class="m-portrait"><img src="imagens/fischer-mobile.png" alt="Retrato de Darcisio Fischer usando terno preto" loading="lazy" decoding="async"></div><div class="m-pad"><h2>Da tesoura à <span class="gold-gradient">estratégia</span></h2><div class="m-bio"><p>Nascido em 1977, em Pato Branco (PR), Darcisio Fischer mudou-se com a família para o Oeste de Santa Catarina em 1992. Em 1996, seguiu sozinho para Balneário Camboriú, onde iniciou sua carreira como cabeleireiro, em 2004.</p><p>Em 2006, ampliou seus conhecimentos com uma formação internacional na escola Pivot Point, após a qual recebeu o título de <em>Hair Stylist</em>, consolidando mais uma etapa de sua trajetória de constante aperfeiçoamento. Em 2010, tornou-se visagista e, em 2016, coach e analista comportamental, expandindo seu olhar para além da estética.</p><p>A união de toda essa experiência e conhecimento deu origem ao Método Código da Imagem, uma metodologia autoral que conecta beleza, identidade e comportamento.</p></div></div></section>
+  <section class="m-about" id="m-sobre"><div class="m-portrait"><img src="imagens/fischer-mobile.png" alt="Retrato de Darcisio Fischer usando terno preto" loading="lazy" decoding="async"><span class="m-photo-name-cover" aria-hidden="true"></span></div><div class="m-pad"><h2>Da tesoura à <span class="gold-gradient">estratégia</span></h2><div class="m-bio"><p>Nascido em 1977, em Pato Branco (PR), Darcisio Fischer mudou-se com a família para o Oeste de Santa Catarina em 1992. Em 1996, seguiu sozinho para Balneário Camboriú, onde iniciou sua carreira como cabeleireiro, em 2004.</p><p>Em 2006, ampliou seus conhecimentos com uma formação internacional na escola Pivot Point, após a qual recebeu o título de <em>Hair Stylist</em>, consolidando mais uma etapa de sua trajetória de constante aperfeiçoamento. Em 2010, tornou-se visagista e, em 2016, coach e analista comportamental, expandindo seu olhar para além da estética.</p><p>A união de toda essa experiência e conhecimento deu origem ao Método Código da Imagem, uma metodologia autoral que conecta beleza, identidade e comportamento.</p></div></div></section>
   <section class="m-vis m-pad" id="m-visagismo"><p class="eyebrow">O QUE É VISAGISMO?</p><h2>Não se trata apenas de aparência. Trata-se de <span class="gold-gradient">identidade.</span></h2><div class="carousel-root mobile-vis-carousel" data-carousel="visagismo"></div></section>
   <section class="m-test m-pad" id="m-teste">
     <div class="m-test-poster-wrap">
