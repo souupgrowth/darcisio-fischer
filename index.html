@@ -7,10 +7,10 @@
   <link rel="icon" href="imagens/foto-perfil-fischer.png" type="image/png" sizes="any">
   <link rel="apple-touch-icon" href="imagens/foto-perfil-fischer.png">
   <link rel="manifest" href="manifest.webmanifest">
-  <meta name="apple-mobile-web-app-title" content="Darcísio Fischer">
-  <meta name="application-name" content="Darcísio Fischer">
-  <meta name="description" content="Darcísio Fischer, visagista. Conheça o Método Código da Imagem, descubra seu perfil e agende sua consultoria de imagem.">
-  <title>Darcísio Fischer | Visagista — Código da Imagem</title>
+  <meta name="apple-mobile-web-app-title" content="Darcisio Fischer">
+  <meta name="application-name" content="Darcisio Fischer">
+  <meta name="description" content="Darcisio Fischer, visagista. Conheça o Método Código da Imagem, descubra seu perfil e agende sua consultoria de imagem.">
+  <title>Darcisio Fischer | Visagista — Código da Imagem</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600;6..96,700&family=Lora:wght@500;600;700&family=Lexend:wght@300;400;500;600&family=Montserrat:wght@400;500;600;700&family=Open+Sans:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
@@ -639,23 +639,53 @@ h1,h2,.desktop-page h1,.desktop-page h2,.mobile-page h1,.mobile-page h2,
   font:500 12px/1.5 Lexend,sans-serif;
   color:#f0d58e;text-align:center;pointer-events:none;
 }
+
+/* AJUSTES PONTUAIS MOBILE — 28/10/2026: cabeçalho sem menu hambúrguer,
+   navegação horizontal na primeira dobra e WhatsApp no canto direito. */
+@media (max-width:760px) {
+  .mobile-header {
+    position:relative; top:auto; z-index:3;
+    padding:14px 68px 12px 19px;
+  }
+  #mobile-nav.mobile-nav {
+    position:relative; top:auto; left:auto; right:auto;
+    display:flex; align-items:center; justify-content:space-between;
+    grid-template-columns:none; flex-wrap:nowrap; gap:clamp(2px,.8vw,6px);
+    width:100%; margin:0; padding:10px 8px;
+    background:#050505; border-bottom:1px solid #59461b;
+  }
+  #mobile-nav.mobile-nav a {
+    flex:0 1 auto; min-width:0; padding:4px 1px;
+    border:0; border-radius:0;
+    font:500 clamp(7.5px,2.15vw,10px)/1.3 Montserrat,sans-serif;
+    text-transform:uppercase; white-space:nowrap; letter-spacing:0;
+    color:#edeae4;
+  }
+  #mobile-nav.mobile-nav a:hover,
+  #mobile-nav.mobile-nav a:focus-visible {color:#dfc15c;}
+  .whatsapp-floating {
+    top:12px;right:12px; width:45px;height:45px;
+  }
+  .whatsapp-floating svg {width:29px;height:29px;}
+  .mobile-page > section {scroll-margin-top:12px;}
+}
 </style>
 
 </head>
 <body data-versao="landing-fischer-duas-fotos-2026-10-27">
-<a class="whatsapp-floating" href="https://wa.me/5547988454663?text=Ol%C3%A1%2C%20Darc%C3%ADsio%21%20Gostaria%20de%20saber%20mais%20sobre%20a%20consultoria." target="_blank" rel="noopener noreferrer" aria-label="Conversar com Darcísio pelo WhatsApp" title="Conversar pelo WhatsApp">
+<a class="whatsapp-floating" href="https://wa.me/5547988454663?text=Ol%C3%A1%2C%20Darcisio%21%20Gostaria%20de%20saber%20mais%20sobre%20a%20consultoria." target="_blank" rel="noopener noreferrer" aria-label="Conversar com Darcisio pelo WhatsApp" title="Conversar pelo WhatsApp">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-hidden="true"><path fill="#fff" d="M16.03 3.2A12.74 12.74 0 0 0 5.16 22.58L3.2 29l6.6-1.73A12.78 12.78 0 1 0 16.03 3.2Zm0 22.98c-2.17 0-4.3-.59-6.15-1.7l-.44-.26-3.92 1.03 1.05-3.82-.29-.46a10.16 10.16 0 1 1 9.75 5.21Zm5.58-7.6c-.3-.15-1.79-.88-2.07-.98-.27-.1-.47-.15-.67.15-.2.3-.78.98-.96 1.18-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.43-1.5-.9-.8-1.5-1.79-1.68-2.1-.17-.3-.02-.47.13-.62.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.08-.15-.67-1.64-.93-2.24-.25-.59-.5-.5-.68-.52l-.58-.01c-.2 0-.54.08-.81.38-.28.3-1.06 1.04-1.06 2.52 0 1.48 1.08 2.92 1.24 3.12.15.2 2.12 3.25 5.16 4.56.72.31 1.28.5 1.73.64.73.23 1.38.2 1.91.12.58-.09 1.79-.73 2.04-1.43.25-.7.25-1.31.18-1.43-.08-.13-.28-.2-.58-.35Z"/></svg>
 </a>
 
 <!-- As 3 imagens permanecem no GitHub, sem alterações e sem cópias no ZIP. -->
-<main class="desktop-page" aria-label="Darcísio Fischer - Visagismo">
+<main class="desktop-page" aria-label="Darcisio Fischer - Visagismo">
   <section class="stage stage-one" id="inicio" aria-label="Início e Sobre">
-    <img class="stage-image" src="imagens/secao-1-e-2.png" alt="Retratos de duas pessoas com desenho de análise facial e fotografia do visagista Darcísio Fischer" width="1609" height="2048" fetchpriority="high">
+    <img class="stage-image" src="imagens/secao-1-e-2.png" alt="Retratos de duas pessoas com desenho de análise facial e fotografia do visagista Darcisio Fischer" width="1609" height="2048" fetchpriority="high">
     <nav class="stage-nav" aria-label="Navegação principal">
       <a class="active" href="#inicio">INÍCIO</a><a href="#sobre">SOBRE</a><a href="#visagismo">VISAGISMO</a><a href="#teste">TESTE</a><a href="#resultados">RESULTADOS</a><a href="#faq">FAQ</a>
     </nav>
     <div class="hero-brand-cleanup" aria-hidden="true"></div>
-    <a href="#inicio" class="hero-brand" aria-label="Darcísio Fischer — início"><img src="imagens/logo-fischer.png" alt="Darcísio Fischer — Visagista" loading="eager"></a>
+    <a href="#inicio" class="hero-brand" aria-label="Darcisio Fischer — início"><img src="imagens/logo-fischer.png" alt="Darcisio Fischer — Visagista" loading="eager"></a>
     <div class="hero-copy">
       <h1><span class="gold-gradient">Sua imagem</span> <br><span class="gold-gradient">comunica</span> antes<br> mesmo de você<br> dizer uma palavra.</h1>
       <p>O visagismo vai além da estética. É a arte de unir personalidade, estilo e expressão para criar uma imagem que revela o melhor de você.</p>
@@ -665,11 +695,11 @@ h1,h2,.desktop-page h1,.desktop-page h2,.mobile-page h1,.mobile-page h2,
       <div class="brand-marquee-track" aria-hidden="true"><span>IMAGEM &nbsp; • &nbsp; ESTRATÉGIA &nbsp; • &nbsp; AUTENTICIDADE &nbsp; • &nbsp; RESULTADO</span><span>IMAGEM &nbsp; • &nbsp; ESTRATÉGIA &nbsp; • &nbsp; AUTENTICIDADE &nbsp; • &nbsp; RESULTADO</span><span>IMAGEM &nbsp; • &nbsp; ESTRATÉGIA &nbsp; • &nbsp; AUTENTICIDADE &nbsp; • &nbsp; RESULTADO</span><span>IMAGEM &nbsp; • &nbsp; ESTRATÉGIA &nbsp; • &nbsp; AUTENTICIDADE &nbsp; • &nbsp; RESULTADO</span></div>
     </div>
     <span id="sobre" class="section-anchor anchor-sobre" aria-hidden="true"></span>
-<section class="about-copy" aria-label="Sobre Darcísio Fischer">
-      <p class="eyebrow">DARCÍSIO FISCHER</p>
+<section class="about-copy" aria-label="Sobre Darcisio Fischer">
+      <p class="eyebrow">DARCISIO FISCHER</p>
       <h2>Da tesoura à<br><span class="gold-gradient">estratégia</span></h2>
       <div class="about-paragraphs">
-        <p>Nascido em 1977, em Pato Branco (PR), Darcísio Fischer mudou-se com a família para o Oeste de Santa Catarina em 1992. Em 1996, seguiu sozinho para Balneário Camboriú, onde iniciou sua carreira como cabeleireiro, em 2004.</p>
+        <p>Nascido em 1977, em Pato Branco (PR), Darcisio Fischer mudou-se com a família para o Oeste de Santa Catarina em 1992. Em 1996, seguiu sozinho para Balneário Camboriú, onde iniciou sua carreira como cabeleireiro, em 2004.</p>
         <p>Em 2006, ampliou seus conhecimentos com uma formação internacional na escola Pivot Point, após a qual recebeu o título de <em>Hair Stylist</em>, consolidando mais uma etapa de sua trajetória de constante aperfeiçoamento. Em 2010, tornou-se visagista e, em 2016, coach e analista comportamental, expandindo seu olhar para além da estética.</p>
         <p>A união de toda essa experiência e conhecimento deu origem ao Método Código da Imagem, uma metodologia autoral que conecta beleza, identidade e comportamento.</p>
       </div>
@@ -696,7 +726,7 @@ h1,h2,.desktop-page h1,.desktop-page h2,.mobile-page h1,.mobile-page h2,
     </section>
   </section>
   <section class="stage stage-three" aria-label="Resultados, contato e perguntas frequentes">
-    <img class="stage-image" src="imagens/secao-4-e-5.png" alt="Fotografias ilustrativas de antes e depois, assinatura dourada e logotipo Darcísio Fischer" width="1601" height="2048" loading="lazy">
+    <img class="stage-image" src="imagens/secao-4-e-5.png" alt="Fotografias ilustrativas de antes e depois, assinatura dourada e logotipo Darcisio Fischer" width="1601" height="2048" loading="lazy">
     <div class="results-background-mask" aria-hidden="true"></div>
     <section id="resultados" class="results-copy">
       <p class="eyebrow">RESULTADOS</p>
@@ -715,7 +745,7 @@ h1,h2,.desktop-page h1,.desktop-page h2,.mobile-page h1,.mobile-page h2,
       <p class="eyebrow">VAMOS CONVERSAR?</p>
       <h2>VAMOS TRANSFORMAR<br><span class="gold-gradient">SUA IMAGEM?</span></h2>
       <p>Agende sua consultoria e descubra como o visagismo<br>pode revelar o melhor de você.</p>
-      <a class="outline-button" href="https://wa.me/5547988454663?text=Ol%C3%A1%2C%20Darc%C3%ADsio%21%20Gostaria%20de%20saber%20mais%20sobre%20a%20consultoria%20de%20imagem." target="_blank" rel="noopener noreferrer">ENTRAR EM CONTATO <span aria-hidden="true">➜</span></a>
+      <a class="outline-button" href="https://wa.me/5547988454663?text=Ol%C3%A1%2C%20Darcisio%21%20Gostaria%20de%20saber%20mais%20sobre%20a%20consultoria%20de%20imagem." target="_blank" rel="noopener noreferrer">ENTRAR EM CONTATO <span aria-hidden="true">➜</span></a>
     </section>
     <section class="faq-copy" id="faq">
       <p class="eyebrow">PERGUNTAS FREQUENTES</p>
@@ -729,11 +759,11 @@ h1,h2,.desktop-page h1,.desktop-page h2,.mobile-page h1,.mobile-page h2,
       </div>
     </section>
     <footer class="stage-footer">
-      <a href="#inicio" class="stage-footer-brand" aria-label="Darcísio Fischer — início"><img src="imagens/logo-fischer.png" alt="Darcísio Fischer Visagista" loading="lazy"></a>
+      <a href="#inicio" class="stage-footer-brand" aria-label="Darcisio Fischer — início"><img src="imagens/logo-fischer.png" alt="Darcisio Fischer Visagista" loading="lazy"></a>
       <nav aria-label="Links do rodapé">
         <a href="#inicio">INÍCIO</a><a href="#sobre">SOBRE</a><a href="#visagismo">VISAGISMO</a><a href="#teste">TESTE</a><a href="#resultados">RESULTADOS</a><a href="#faq">FAQ</a>
       </nav>
-      <div class="stage-social"><a href="https://www.instagram.com/darcisiofischervisagista/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Darcísio Fischer"><svg viewBox="0 0 24 24" width="25" height="25" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.25"/><circle cx="18" cy="6" r="1" fill="currentColor" stroke="none"/></svg></a><button type="button" data-tiktok aria-label="TikTok — endereço ainda não informado" title="Link do TikTok pendente"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M15.34 1.5H11.7v14.17a3.05 3.05 0 1 1-2.64-3.03V9.01a6.63 6.63 0 1 0 6.28 6.66V8.17a9.04 9.04 0 0 0 5.13 1.64V6.14a5.5 5.5 0 0 1-5.13-4.64Z"/></svg></button></div>
+      <div class="stage-social"><a href="https://www.instagram.com/darcisiofischervisagista/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Darcisio Fischer"><svg viewBox="0 0 24 24" width="25" height="25" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.25"/><circle cx="18" cy="6" r="1" fill="currentColor" stroke="none"/></svg></a><button type="button" data-tiktok aria-label="TikTok de Darcisio Fischer" title="TikTok de Darcisio Fischer"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M15.34 1.5H11.7v14.17a3.05 3.05 0 1 1-2.64-3.03V9.01a6.63 6.63 0 1 0 6.28 6.66V8.17a9.04 9.04 0 0 0 5.13 1.64V6.14a5.5 5.5 0 0 1-5.13-4.64Z"/></svg></button></div>
       <small>© 2026 Sou Up Company. Todos os direitos reservados.</small><small>Sua imagem é o seu maior ativo.</small>
     </footer>
   </section>
@@ -741,12 +771,11 @@ h1,h2,.desktop-page h1,.desktop-page h2,.mobile-page h1,.mobile-page h2,
 <!-- Conteúdo móvel reconstruído com os mesmos arquivos de fundo, sem alterar suas imagens. -->
 <div class="mobile-page">
   <header class="mobile-header">
-    <a class="mobile-brand" href="#m-inicio" aria-label="Darcísio Fischer — início"><img src="imagens/logo-fischer.png" alt="Darcísio Fischer — Visagista" loading="eager"></a>
-    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-controls="mobile-nav" aria-expanded="false">☰</button>
-    <nav id="mobile-nav" class="mobile-nav" hidden><a href="#m-inicio">Início</a><a href="#m-sobre">Sobre</a><a href="#m-visagismo">Visagismo</a><a href="#m-teste">Teste</a><a href="#m-metodo">Método</a><a href="#m-resultados">Resultados</a><a href="#m-faq">FAQ</a></nav>
+    <a class="mobile-brand" href="#m-inicio" aria-label="Darcisio Fischer — início"><img src="imagens/logo-fischer.png" alt="Darcisio Fischer — Visagista" loading="eager"></a>
   </header>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Navegação da versão mobile"><a href="#m-inicio">Início</a><a href="#m-sobre">Sobre</a><a href="#m-visagismo">Visagismo</a><a href="#m-teste">Teste</a><a href="#m-metodo">Método</a><a href="#m-resultados">Resultados</a><a href="#m-faq">FAQ</a></nav>
   <section class="m-hero" id="m-inicio"><div class="m-people" role="img" aria-label="Mulher e homem com marcações faciais"></div><div class="m-pad"><h1><span class="gold-gradient">Sua imagem</span> <span class="gold-gradient">comunica</span> antes mesmo de você dizer uma palavra.</h1><p>O visagismo vai além da estética. É a arte de unir personalidade, estilo e expressão para criar uma imagem que revela o melhor de você.</p><a class="cta-gold" href="#m-teste">DESCUBRA O SEU PERFIL ➜</a><div class="m-marquee-band" aria-label="Imagem, estratégia, autenticidade e resultado"><div class="m-marquee-track" aria-hidden="true"><span class="m-marquee-copy">IMAGEM &nbsp; • &nbsp; ESTRATÉGIA &nbsp; • &nbsp; AUTENTICIDADE &nbsp; • &nbsp; RESULTADO &nbsp; • &nbsp; </span><span class="m-marquee-copy">IMAGEM &nbsp; • &nbsp; ESTRATÉGIA &nbsp; • &nbsp; AUTENTICIDADE &nbsp; • &nbsp; RESULTADO &nbsp; • &nbsp; </span></div></div></div></section>
-  <section class="m-about" id="m-sobre"><div class="m-portrait"><img src="imagens/fischer-mobile.png" alt="Retrato de Darcísio Fischer usando terno preto" loading="lazy" decoding="async"></div><div class="m-pad"><h2>Da tesoura à <span class="gold-gradient">estratégia</span></h2><div class="m-bio"><p>Nascido em 1977, em Pato Branco (PR), Darcísio Fischer mudou-se com a família para o Oeste de Santa Catarina em 1992. Em 1996, seguiu sozinho para Balneário Camboriú, onde iniciou sua carreira como cabeleireiro, em 2004.</p><p>Em 2006, ampliou seus conhecimentos com uma formação internacional na escola Pivot Point, após a qual recebeu o título de <em>Hair Stylist</em>, consolidando mais uma etapa de sua trajetória de constante aperfeiçoamento. Em 2010, tornou-se visagista e, em 2016, coach e analista comportamental, expandindo seu olhar para além da estética.</p><p>A união de toda essa experiência e conhecimento deu origem ao Método Código da Imagem, uma metodologia autoral que conecta beleza, identidade e comportamento.</p></div></div></section>
+  <section class="m-about" id="m-sobre"><div class="m-portrait"><img src="imagens/fischer-mobile.png" alt="Retrato de Darcisio Fischer usando terno preto" loading="lazy" decoding="async"></div><div class="m-pad"><h2>Da tesoura à <span class="gold-gradient">estratégia</span></h2><div class="m-bio"><p>Nascido em 1977, em Pato Branco (PR), Darcisio Fischer mudou-se com a família para o Oeste de Santa Catarina em 1992. Em 1996, seguiu sozinho para Balneário Camboriú, onde iniciou sua carreira como cabeleireiro, em 2004.</p><p>Em 2006, ampliou seus conhecimentos com uma formação internacional na escola Pivot Point, após a qual recebeu o título de <em>Hair Stylist</em>, consolidando mais uma etapa de sua trajetória de constante aperfeiçoamento. Em 2010, tornou-se visagista e, em 2016, coach e analista comportamental, expandindo seu olhar para além da estética.</p><p>A união de toda essa experiência e conhecimento deu origem ao Método Código da Imagem, uma metodologia autoral que conecta beleza, identidade e comportamento.</p></div></div></section>
   <section class="m-vis m-pad" id="m-visagismo"><p class="eyebrow">O QUE É VISAGISMO?</p><h2>Não se trata apenas de aparência. Trata-se de <span class="gold-gradient">identidade.</span></h2><div class="carousel-root mobile-vis-carousel" data-carousel="visagismo"></div></section>
   <section class="m-test m-pad" id="m-teste">
     <div class="m-test-poster-wrap">
@@ -768,23 +797,23 @@ h1,h2,.desktop-page h1,.desktop-page h2,.mobile-page h1,.mobile-page h2,
   </div>
   <p class="reels-mobile-counter" aria-live="polite"><span id="reels-current">1</span> / 4</p>
 </div><a class="outline-button" href="https://www.instagram.com/darcisiofischervisagista/" target="_blank" rel="noopener noreferrer">VER MAIS RESULTADOS ➜</a></section>
-  <section class="m-contact m-pad"><p class="eyebrow">VAMOS CONVERSAR?</p><h2>VAMOS TRANSFORMAR <span class="gold-gradient">SUA IMAGEM?</span></h2><p>Agende sua consultoria e descubra como o visagismo pode revelar o melhor de você.</p><a class="outline-button" href="https://wa.me/5547988454663?text=Ol%C3%A1%2C%20Darc%C3%ADsio%21%20Gostaria%20de%20saber%20mais%20sobre%20a%20consultoria%20de%20imagem." target="_blank" rel="noopener noreferrer">ENTRAR EM CONTATO ➜</a></section>
-  <section class="m-faq m-pad" id="m-faq"><p class="eyebrow">PERGUNTAS FREQUENTES</p><h2>TIRE SUAS <span class="gold-gradient">DÚVIDAS</span></h2><div class="faq-items"><details name="m-faq"><summary>O que é visagismo?</summary><p>O visagismo considera traços faciais, identidade, personalidade e objetivos para orientar escolhas de imagem.</p></details><details name="m-faq"><summary>Quais os benefícios do visagismo?</summary><p>Ajuda a criar uma imagem mais autêntica, coerente e alinhada aos seus objetivos.</p></details><details name="m-faq"><summary>Como funciona a consultoria?</summary><p>A consultoria começa com uma conversa e uma avaliação personalizada de identidade e objetivos.</p></details><details name="m-faq"><summary>Quanto tempo dura o atendimento?</summary><p>A duração varia conforme a necessidade. Converse com Darcísio para mais detalhes.</p></details><details name="m-faq"><summary>O visagismo atende apenas homens?</summary><p>Não. O atendimento é individual e destinado a mulheres e homens.</p></details></div></section>
-  <footer class="m-footer"><div class="m-footer-social"><a href="https://www.instagram.com/darcisiofischervisagista/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Darcísio Fischer"><svg viewBox="0 0 24 24" width="25" height="25" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.25"/><circle cx="18" cy="6" r="1" fill="currentColor" stroke="none"/></svg></a><button type="button" data-tiktok aria-label="TikTok — endereço ainda não informado"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M15.34 1.5H11.7v14.17a3.05 3.05 0 1 1-2.64-3.03V9.01a6.63 6.63 0 1 0 6.28 6.66V8.17a9.04 9.04 0 0 0 5.13 1.64V6.14a5.5 5.5 0 0 1-5.13-4.64Z"/></svg></button></div><a class="m-footer-brand" href="#m-inicio" aria-label="Darcísio Fischer — Visagista, voltar ao início"><img src="imagens/logo-fischer.png" alt="Darcísio Fischer — Visagista" width="740" height="269" loading="lazy"></a><p>© 2026 Sou Up Company. Todos os direitos reservados.</p><a href="#m-inicio">VOLTAR AO INÍCIO ↑</a></footer>
+  <section class="m-contact m-pad"><p class="eyebrow">VAMOS CONVERSAR?</p><h2>VAMOS TRANSFORMAR <span class="gold-gradient">SUA IMAGEM?</span></h2><p>Agende sua consultoria e descubra como o visagismo pode revelar o melhor de você.</p><a class="outline-button" href="https://wa.me/5547988454663?text=Ol%C3%A1%2C%20Darcisio%21%20Gostaria%20de%20saber%20mais%20sobre%20a%20consultoria%20de%20imagem." target="_blank" rel="noopener noreferrer">ENTRAR EM CONTATO ➜</a></section>
+  <section class="m-faq m-pad" id="m-faq"><p class="eyebrow">PERGUNTAS FREQUENTES</p><h2>TIRE SUAS <span class="gold-gradient">DÚVIDAS</span></h2><div class="faq-items"><details name="m-faq"><summary>O que é visagismo?</summary><p>O visagismo considera traços faciais, identidade, personalidade e objetivos para orientar escolhas de imagem.</p></details><details name="m-faq"><summary>Quais os benefícios do visagismo?</summary><p>Ajuda a criar uma imagem mais autêntica, coerente e alinhada aos seus objetivos.</p></details><details name="m-faq"><summary>Como funciona a consultoria?</summary><p>A consultoria começa com uma conversa e uma avaliação personalizada de identidade e objetivos.</p></details><details name="m-faq"><summary>Quanto tempo dura o atendimento?</summary><p>A duração varia conforme a necessidade. Converse com Darcisio para mais detalhes.</p></details><details name="m-faq"><summary>O visagismo atende apenas homens?</summary><p>Não. O atendimento é individual e destinado a mulheres e homens.</p></details></div></section>
+  <footer class="m-footer"><div class="m-footer-social"><a href="https://www.instagram.com/darcisiofischervisagista/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Darcisio Fischer"><svg viewBox="0 0 24 24" width="25" height="25" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.25"/><circle cx="18" cy="6" r="1" fill="currentColor" stroke="none"/></svg></a><button type="button" data-tiktok aria-label="TikTok de Darcisio Fischer"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M15.34 1.5H11.7v14.17a3.05 3.05 0 1 1-2.64-3.03V9.01a6.63 6.63 0 1 0 6.28 6.66V8.17a9.04 9.04 0 0 0 5.13 1.64V6.14a5.5 5.5 0 0 1-5.13-4.64Z"/></svg></button></div><a class="m-footer-brand" href="#m-inicio" aria-label="Darcisio Fischer — Visagista, voltar ao início"><img src="imagens/logo-fischer.png" alt="Darcisio Fischer — Visagista" width="740" height="269" loading="lazy"></a><p>© 2026 Sou Up Company. Todos os direitos reservados.</p><a href="#m-inicio">VOLTAR AO INÍCIO ↑</a></footer>
 </div>
-<!-- Cadastro e teste: registro no Google Sheets e e-mail exclusivo para Darcísio via Google Apps Script. -->
+<!-- Cadastro e teste: registro no Google Sheets e e-mail exclusivo para Darcisio via Google Apps Script. -->
 <dialog id="test-dialog" class="lux-dialog"><div class="dialog-frame">
   <button type="button" class="dialog-close" data-close-test aria-label="Fechar teste">×</button>
   <div id="test-app" aria-live="polite"></div>
 </div></dialog>
-<dialog id="method-dialog" class="lux-dialog info-dialog"><div class="dialog-frame"><button class="dialog-close" type="button" data-close-method aria-label="Fechar">×</button><p class="eyebrow">MÉTODO CÓDIGO DA IMAGEM</p><h2>Mais que aparência, uma expressão da sua identidade.</h2><p>Uma abordagem individual que combina descoberta da essência, análise da moldura do rosto e escolhas de imagem alinhadas à personalidade e aos objetivos.</p><a class="cta-gold" href="https://wa.me/5547988454663?text=Ol%C3%A1%2C%20Darc%C3%ADsio%21%20Gostaria%20de%20conhecer%20o%20M%C3%A9todo%20C%C3%B3digo%20da%20Imagem." target="_blank" rel="noopener noreferrer">CONVERSAR COM DARCÍSIO ➜</a></div></dialog>
+<dialog id="method-dialog" class="lux-dialog info-dialog"><div class="dialog-frame"><button class="dialog-close" type="button" data-close-method aria-label="Fechar">×</button><p class="eyebrow">MÉTODO CÓDIGO DA IMAGEM</p><h2>Mais que aparência, uma expressão da sua identidade.</h2><p>Uma abordagem individual que combina descoberta da essência, análise da moldura do rosto e escolhas de imagem alinhadas à personalidade e aos objetivos.</p><a class="cta-gold" href="https://wa.me/5547988454663?text=Ol%C3%A1%2C%20Darcisio%21%20Gostaria%20de%20conhecer%20o%20M%C3%A9todo%20C%C3%B3digo%20da%20Imagem." target="_blank" rel="noopener noreferrer">CONVERSAR COM DARCISIO ➜</a></div></dialog>
 <dialog id="notice-dialog" class="lux-dialog info-dialog"><div class="dialog-frame"><button class="dialog-close" type="button" data-close-notice aria-label="Fechar">×</button><h2>Link ainda não configurado</h2><p>O endereço oficial dessa rede social será adicionado quando for informado.</p><button class="cta-gold" type="button" data-close-notice>ENTENDI</button></div></dialog>
   <script>
 'use strict';
 /** Landing estática: resultados e cadastros encaminhados ao Google Apps Script após conclusão e consentimento. */
 const CONFIG = {
   instagramUrl: '', // inserir a URL oficial completa quando informada
-  tiktokUrl: '', // inserir a URL oficial completa quando informada
+  tiktokUrl: 'https://www.tiktok.com/@darcisiofischervisagista', // perfil oficial do TikTok
   whatsapp: '5547988454663',
   appsScriptUrl: '' // Insira aqui a URL /exec da implantação do Google Apps Script
 };
@@ -843,9 +872,7 @@ function renderCarousel(root){
   update();
 }
 document.querySelectorAll('.carousel-root').forEach(renderCarousel);
-const menuBtn=document.querySelector('.menu-toggle');const mobileNav=document.querySelector('#mobile-nav');
-menuBtn?.addEventListener('click',()=>{const v=menuBtn.getAttribute('aria-expanded')==='true';menuBtn.setAttribute('aria-expanded',String(!v));mobileNav.hidden=v;menuBtn.textContent=v?'☰':'×'});
-mobileNav?.addEventListener('click',e=>{if(e.target.closest('a')){mobileNav.hidden=true;menuBtn.setAttribute('aria-expanded','false');menuBtn.textContent='☰'}});
+// No celular, o menu é horizontal e não necessita de botão expansível.
 for(const el of document.querySelectorAll('[data-tiktok]')){
  el.addEventListener('click',()=>{
   const u=el.hasAttribute('data-instagram')?CONFIG.instagramUrl:CONFIG.tiktokUrl;
@@ -875,7 +902,7 @@ const testApp=document.querySelector('#test-app');
 let testState=null;
 const escapeHTML=v=>String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function intro(){
- testApp.innerHTML=`<p class="eyebrow">TESTE DE TEMPERAMENTO</p><h2>Conheça seu perfil</h2><p class="quiz-muted">Para descobrir o seu temperamento, basta responder às perguntas abaixo. Responda com sinceridade e volte a cada pergunta sempre que achar necessário.</p><p class="quiz-note">⏱ Tempo estimado: cerca de 5 minutos.</p><h3 style="font-family:'Lora',Georgia,serif;font-size:23px;margin:16px 0 10px">Antes de começar</h3><p class="quiz-muted">Preencha os quatro campos obrigatórios para realizar o teste. O resultado será exibido ao finalizar.</p><form id="test-intro" style="margin-top:12px"><div class="test-intro-fields"><label>Nome completo *<input name="nome" autocomplete="name" maxlength="100" placeholder="Seu nome completo" required></label><label>WhatsApp com DDD *<input name="telefone" type="tel" autocomplete="tel" placeholder="(47) 99999-9999" maxlength="18" inputmode="tel" required></label><label>E-mail *<input name="email" type="email" autocomplete="email" maxlength="180" placeholder="seuemail@exemplo.com" required></label><label>Data de nascimento *<input name="nascimento" type="date" autocomplete="bday" required></label></div><label class="test-intro-consent"><input name="consentimento" type="checkbox" required><span>Estou ciente e autorizo o uso dos meus dados para realizar o teste e atender eventual pedido de consultoria. Os dados não serão vendidos ou compartilhados com terceiros para fins comerciais.</span></label><label class="test-intro-consent"><input name="marketing" type="checkbox"><span>Opcional: autorizo receber contatos sobre consultorias e serviços do Darcísio por WhatsApp ou e-mail.</span></label><button class="cta-gold" type="submit" style="width:100%">INICIAR O TESTE →</button></form>`;
+ testApp.innerHTML=`<p class="eyebrow">TESTE DE TEMPERAMENTO</p><h2>Conheça seu perfil</h2><p class="quiz-muted">Para descobrir o seu temperamento, basta responder às perguntas abaixo. Responda com sinceridade e volte a cada pergunta sempre que achar necessário.</p><p class="quiz-note">⏱ Tempo estimado: cerca de 5 minutos.</p><h3 style="font-family:'Lora',Georgia,serif;font-size:23px;margin:16px 0 10px">Antes de começar</h3><p class="quiz-muted">Preencha os quatro campos obrigatórios para realizar o teste. O resultado será exibido ao finalizar.</p><form id="test-intro" style="margin-top:12px"><div class="test-intro-fields"><label>Nome completo *<input name="nome" autocomplete="name" maxlength="100" placeholder="Seu nome completo" required></label><label>WhatsApp com DDD *<input name="telefone" type="tel" autocomplete="tel" placeholder="(47) 99999-9999" maxlength="18" inputmode="tel" required></label><label>E-mail *<input name="email" type="email" autocomplete="email" maxlength="180" placeholder="seuemail@exemplo.com" required></label><label>Data de nascimento *<input name="nascimento" type="date" autocomplete="bday" required></label></div><label class="test-intro-consent"><input name="consentimento" type="checkbox" required><span>Estou ciente e autorizo o uso dos meus dados para realizar o teste. Os dados não serão vendidos ou compartilhados com terceiros para fins comerciais.</span></label><label class="test-intro-consent"><input name="marketing" type="checkbox"><span>Opcional: autorizo receber contatos sobre consultorias e serviços do Darcisio por WhatsApp ou e-mail.</span></label><button class="cta-gold" type="submit" style="width:100%">INICIAR O TESTE →</button></form>`;
  const form=testApp.querySelector('form');
  const birthday=form.elements.namedItem('nascimento');
  const dateToday=new Date();
@@ -935,7 +962,7 @@ function renderResult(){
  const tied=sums[order[0]]===sums[order[1]];
  const descriptions=TYPE_DETAILS[primary];
  const scoreRows=order.map((k,i)=>`<div><strong>${['Primário','Secundário','Terciário','Menor pontuação'][i]}</strong>${TYPES[k]} · ${sums[k]}/33 pontos</div>`).join('');
- const message=`Olá, Darcísio! Fiz o teste de temperamento no seu site. Meu perfil indicado foi ${primary} / ${secondary}. Quero saber mais sobre a consultoria completa de imagem.`;
+ const message=`Olá, Darcisio! Fiz o teste de temperamento no seu site. Meu perfil indicado foi ${primary} / ${secondary}. Quero saber mais sobre a consultoria completa de imagem.`;
  const url=`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(message)}`;
  testApp.innerHTML=`<p class="eyebrow">SEU RESULTADO</p><h2>${escapeHTML(testState.name.split(' ')[0])}, conheça seu perfil</h2><p class="quiz-muted">Esta é uma leitura exploratória de tendências comportamentais com base nas respostas informadas.</p><h3 class="quiz-result-title">${primary} + ${secondary}</h3><div class="quiz-result-grid">${scoreRows}</div>${tied?'<p class="quiz-note">Houve empate entre os temperamentos mais pontuados; por isso, não é possível afirmar predominância clara.</p>':''}<div class="result-detail"><h3>Como esse perfil costuma se expressar</h3><p>O perfil ${primary.toLowerCase()} foi o mais pontuado, seguido pelo ${secondary.toLowerCase()}. Essa combinação sugere tendências que podem aparecer de formas diferentes conforme a situação, a experiência e o contexto.</p><h3>Pontos fortes</h3><p>${descriptions.strength}</p><h3>Pontos de atenção</h3><p>${descriptions.care}</p><h3>O que isso pode representar na sua imagem</h3><p>${descriptions.image} A consultoria considera também características individuais, desejos, rotina e objetivos — muito além de um resultado de questionário.</p></div><div class="quiz-result-cta"><h3>Seu temperamento é apenas o começo. Sua imagem pode comunicar quem você é.</h3><p>Conheça a consultoria completa do Método Código da Imagem e descubra como unir sua essência, sua personalidade e seus objetivos em uma presença autêntica.</p><a class="cta-gold" href="${url}" target="_blank" rel="noopener noreferrer">QUERO MINHA CONSULTORIA →</a></div><p class="quiz-note">Resultado informativo, sem finalidade de diagnóstico psicológico.</p>`;
  testApp.scrollIntoView({block:'start'});
